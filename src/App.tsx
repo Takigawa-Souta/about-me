@@ -7,8 +7,9 @@ import About from './pages/About'
 import Skills from './pages/Skills'
 import Projects from './pages/Projects'
 import Contact from './pages/Contact'
+import Favorites from './pages/Favorites'
 
-type PageType = 'home' | 'about' | 'skills' | 'projects' | 'contact'
+type PageType = 'home' | 'about' | 'skills' | 'projects' | 'contact' | 'favorites'
 
 function App() {
   const [currentPage, setCurrentPage] = useState<PageType>('home')
@@ -29,6 +30,8 @@ function App() {
         return <Projects />
       case 'contact':
         return <Contact />
+      case 'favorites':
+        return <Favorites />
       default:
         return <Home onNavigate={handleNavigate} />
     }

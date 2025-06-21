@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './Contact.css'
+import ContactHeader from '../components/ContactHeader'
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -26,10 +27,7 @@ function Contact() {
   return (
     <div className="contact-page">
       <div className="contact-container">
-        <div className="contact-header">
-          <h1>お問い合わせ</h1>
-          <p>ご質問やご相談がございましたら、お気軽にご連絡ください。</p>
-        </div>
+        <ContactHeader />
         
         <div className="contact-content">
           <div className="contact-info">

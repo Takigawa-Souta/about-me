@@ -1,6 +1,6 @@
 import './Header.css'
 
-type PageType = 'home' | 'about' | 'skills' | 'projects' | 'contact'
+type PageType = 'home' | 'about' | 'skills' | 'projects' | 'contact' | 'favorites'
 
 interface HeaderProps {
   currentPage: PageType
@@ -44,7 +44,15 @@ function Header({ currentPage, onNavigate }: HeaderProps) {
                 onClick={() => handleNavClick('skills')}
                 className={`nav-link ${currentPage === 'skills' ? 'active' : ''}`}
               >
-                スキル
+                趣味
+              </button>
+            </li>
+            <li>
+              <button 
+                onClick={() => handleNavClick('favorites')}
+                className={`nav-link ${currentPage === 'favorites' ? 'active' : ''}`}
+              >
+                好きなもの
               </button>
             </li>
             <li>
@@ -52,7 +60,7 @@ function Header({ currentPage, onNavigate }: HeaderProps) {
                 onClick={() => handleNavClick('projects')}
                 className={`nav-link ${currentPage === 'projects' ? 'active' : ''}`}
               >
-                プロジェクト
+                学習目標
               </button>
             </li>
             <li>

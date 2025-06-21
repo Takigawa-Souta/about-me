@@ -10,25 +10,6 @@
   padding: 0 2rem;
 }
 
-.skills-header {
-  text-align: center;
-  margin-bottom: 3rem;
-}
-
-.skills-header h1 {
-  font-size: 2.5rem;
-  color: #333;
-  margin-bottom: 1rem;
-}
-
-.skills-header p {
-  font-size: 1.2rem;
-  color: #666;
-  max-width: 600px;
-  margin: 0 auto;
-  line-height: 1.6;
-}
-
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -91,6 +72,41 @@
   transition: width 0.8s ease;
 }
 
+/* 趣味・好きなもの用のスタイル */
+.hobby-item {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 10px;
+  border-left: 4px solid #667eea;
+  transition: all 0.3s ease;
+}
+
+.hobby-item:hover {
+  background: #e9ecef;
+  transform: translateX(5px);
+}
+
+.hobby-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.hobby-name {
+  font-weight: 600;
+  color: #333;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.hobby-description {
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
 @media (max-width: 768px) {
   .skills-grid {
     grid-template-columns: 1fr;
@@ -103,5 +119,9 @@
   
   .skill-category {
     padding: 1.5rem;
+  }
+  
+  .hobby-item {
+    padding: 0.8rem;
   }
 }

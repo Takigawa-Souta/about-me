@@ -1,33 +1,34 @@
 import './Skills.css'
+import SkillsHeader from '../components/SkillsHeader'
 
 function Skills() {
-  const skillCategories = [
+  const hobbyCategories = [
     {
-      title: "フロントエンド",
-      skills: [
-        { name: "React", level: 90 },
-        { name: "TypeScript", level: 85 },
-        { name: "JavaScript", level: 95 },
-        { name: "HTML/CSS", level: 90 },
-        { name: "Vue.js", level: 70 }
+      title: "趣味・娯楽",
+      items: [
+        { name: "映画鑑賞", description: "特にSF・アクション映画が好きです" },
+        { name: "読書", description: "技術書からフィクションまで幅広く読みます" },
+        { name: "音楽鑑賞", description: "ロック・ポップス・クラシック音楽を聴きます" },
+        { name: "ゲーム", description: "RPG・ストラテジーゲームを楽しんでいます" },
+        { name: "料理", description: "新しいレシピに挑戦するのが好きです" }
       ]
     },
     {
-      title: "バックエンド",
-      skills: [
-        { name: "Node.js", level: 80 },
-        { name: "Express", level: 75 },
-        { name: "Python", level: 70 },
-        { name: "PHP", level: 65 }
+      title: "好きなもの",
+      items: [
+        { name: "コーヒー", description: "毎朝のコーヒーが日課です" },
+        { name: "カメラ", description: "風景写真を撮るのが趣味です" },
+        { name: "旅行", description: "新しい場所を探索するのが好きです" },
+        { name: "アート", description: "美術館巡りやデザイン鑑賞を楽しみます" }
       ]
     },
     {
-      title: "ツール・その他",
-      skills: [
-        { name: "Git", level: 85 },
-        { name: "Docker", level: 70 },
-        { name: "AWS", level: 60 },
-        { name: "Figma", level: 75 }
+      title: "学びたいこと",
+      items: [
+        { name: "機械学習・AI", description: "データサイエンスに興味があります" },
+        { name: "UI/UXデザイン", description: "より良いユーザー体験を提供したいです" },
+        { name: "モバイル開発", description: "React NativeやFlutterを学びたいです" },
+        { name: "クラウド技術", description: "AWSやGCPの知識を深めたいです" }
       ]
     }
   ]
@@ -35,27 +36,18 @@ function Skills() {
   return (
     <div className="skills-page">
       <div className="skills-container">
-        <div className="skills-header">
-          <h1>スキル</h1>
-          <p>これまでに習得した技術スタックと習熟度をご紹介します。</p>
-        </div>
+        <SkillsHeader />
         
         <div className="skills-grid">
-          {skillCategories.map((category, index) => (
+          {hobbyCategories.map((category, index) => (
             <div key={index} className="skill-category">
               <h2>{category.title}</h2>
               <div className="skills-list">
-                {category.skills.map((skill, skillIndex) => (
-                  <div key={skillIndex} className="skill-item">
-                    <div className="skill-info">
-                      <span className="skill-name">{skill.name}</span>
-                      <span className="skill-percentage">{skill.level}%</span>
-                    </div>
-                    <div className="skill-bar">
-                      <div 
-                        className="skill-progress" 
-                        style={{ width: `${skill.level}%` }}
-                      ></div>
+                {category.items.map((item, itemIndex) => (
+                  <div key={itemIndex} className="hobby-item">
+                    <div className="hobby-info">
+                      <h3 className="hobby-name">{item.name}</h3>
+                      <p className="hobby-description">{item.description}</p>
                     </div>
                   </div>
                 ))}
