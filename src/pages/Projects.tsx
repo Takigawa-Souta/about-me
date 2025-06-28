@@ -1,71 +1,111 @@
 import './Projects.css'
-import ProjectsHeader from '../components/ProjectsHeader'
 
 function Projects() {
-  const learningGoals = [
-    {
-      id: 1,
-      title: "機械学習・AI開発",
-      description: "データサイエンスとAI技術を学び、実用的なアプリケーションを開発したいです",
-      technologies: ["Python", "TensorFlow", "PyTorch", "Scikit-learn"],
-      image: "https://via.placeholder.com/300x200",
-      resources: "#",
-      roadmap: "#"
-    },
-    {
-      id: 2,
-      title: "UI/UXデザイン",
-      description: "ユーザー中心設計の原則を学び、より良いユーザー体験を提供したいです",
-      technologies: ["Figma", "Adobe XD", "Prototyping", "User Research"],
-      image: "https://via.placeholder.com/300x200",
-      resources: "#",
-      roadmap: "#"
-    },
-    {
-      id: 3,
-      title: "モバイルアプリ開発",
-      description: "クロスプラットフォーム開発でモバイルアプリを作成したいです",
-      technologies: ["React Native", "Flutter", "Dart", "Mobile UI"],
-      image: "https://via.placeholder.com/300x200",
-      resources: "#",
-      roadmap: "#"
-    },
-    {
-      id: 4,
-      title: "クラウド・インフラ技術",
-      description: "スケーラブルなクラウドアーキテクチャの構築を学びたいです",
-      technologies: ["AWS", "Docker", "Kubernetes", "CI/CD"],
-      image: "https://via.placeholder.com/300x200",
-      resources: "#",
-      roadmap: "#"
-    }
-  ]
+  const studyData = {
+    title: "勉強したいこと、意気込み",
+    subtitle: "今勉強してることやしていきたいことについてのページです",
+    currentStudies: [
+      {
+        id: 1,
+        title: "Web開発",
+        description: "HTML、CSS、JavaScriptを中心に、現代的なWebアプリケーション開発を学んでいます",
+        technologies: ["HTML", "CSS", "JavaScript", "React", "TypeScript"],
+        status: "学習中",
+        progress: 60
+      },
+      {
+        id: 2,
+        title: "プログラミング基礎",
+        description: "プログラミングの基本概念やアルゴリズムについて深く理解したいです",
+        technologies: ["アルゴリズム", "データ構造", "オブジェクト指向"],
+        status: "学習中",
+        progress: 40
+      }
+    ],
+    futureGoals: [
+      {
+        id: 3,
+        title: "バックエンド開発",
+        description: "サーバーサイドの技術を学び、フルスタック開発者になりたいです",
+        technologies: ["Node.js", "Python", "データベース", "API設計"],
+        status: "予定",
+        progress: 0
+      },
+      {
+        id: 4,
+        title: "モバイルアプリ開発",
+        description: "スマートフォンアプリの開発技術を身につけたいです",
+        technologies: ["React Native", "Flutter", "モバイルUI"],
+        status: "予定",
+        progress: 0
+      }
+    ]
+  }
 
   return (
     <div className="projects-page">
       <div className="projects-container">
-        <ProjectsHeader />
+        <div className="study-header">
+          <h1>{studyData.title}</h1>
+          <p className="study-subtitle">{studyData.subtitle}</p>
+        </div>
         
-        <div className="projects-grid">
-          {learningGoals.map(goal => (
-            <div key={goal.id} className="project-card">
-              <img src={goal.image} alt={goal.title} className="project-image" />
-              <div className="project-content">
-                <h3>{goal.title}</h3>
-                <p>{goal.description}</p>
-                <div className="project-technologies">
-                  {goal.technologies.map((tech, index) => (
-                    <span key={index} className="tech-tag">{tech}</span>
-                  ))}
-                </div>
-                <div className="project-links">
-                  <a href={goal.resources} className="project-link">学習リソース</a>
-                  <a href={goal.roadmap} className="project-link">ロードマップ</a>
+        <section className="current-studies">
+          <h2>現在勉強していること</h2>
+          <div className="projects-grid">
+            {studyData.currentStudies.map(study => (
+              <div key={study.id} className="project-card">
+                <div className="project-content">
+                  <div className="project-header">
+                    <h3>{study.title}</h3>
+                    <span className={`status-badge ${study.status === '学習中' ? 'studying' : 'planned'}`}>
+                      {study.status}
+                    </span>
+                  </div>
+                  <p>{study.description}</p>
+                  <div className="project-technologies">
+                    {study.technologies.map((tech, index) => (
+                      <span key={index} className="tech-tag">{tech}</span>
+                    ))}
+                  </div>
+                  <div className="progress-section">
+                    <div className="progress-label">進捗: {study.progress}%</div>
+                    <div className="progress-bar">
+                      <div 
+                        className="progress-fill" 
+                        style={{ width: `${study.progress}%` }}
+                      ></div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="future-goals">
+          <h2>今後学びたいこと</h2>
+          <div className="projects-grid">
+            {studyData.futureGoals.map(goal => (
+              <div key={goal.id} className="project-card">
+                <div className="project-content">
+                  <div className="project-header">
+                    <h3>{goal.title}</h3>
+                    <span className={`status-badge ${goal.status === '学習中' ? 'studying' : 'planned'}`}>
+                      {goal.status}
+                    </span>
+                  </div>
+                  <p>{goal.description}</p>
+                  <div className="project-technologies">
+                    {goal.technologies.map((tech, index) => (
+                      <span key={index} className="tech-tag">{tech}</span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
       </div>
     </div>
   )

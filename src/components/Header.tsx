@@ -17,9 +17,9 @@ function Header({ currentPage, onNavigate }: HeaderProps) {
       <div className="header-container">
         <button 
           onClick={() => handleNavClick('home')} 
-          className="logo"
+          className="logo header-title"
         >
-          <span>Portfolio</span>
+          <span>自己紹介サイト</span>
         </button>
         <nav className="nav">
           <ul className="nav-list">
@@ -36,7 +36,7 @@ function Header({ currentPage, onNavigate }: HeaderProps) {
                 onClick={() => handleNavClick('about')}
                 className={`nav-link ${currentPage === 'about' ? 'active' : ''}`}
               >
-                自己紹介
+                概要
               </button>
             </li>
             <li>
@@ -60,7 +60,7 @@ function Header({ currentPage, onNavigate }: HeaderProps) {
                 onClick={() => handleNavClick('projects')}
                 className={`nav-link ${currentPage === 'projects' ? 'active' : ''}`}
               >
-                学習目標
+                勉強したいこと・意気込み
               </button>
             </li>
             <li>
@@ -68,7 +68,7 @@ function Header({ currentPage, onNavigate }: HeaderProps) {
                 onClick={() => handleNavClick('contact')}
                 className={`nav-link ${currentPage === 'contact' ? 'active' : ''}`}
               >
-                連絡先
+                お問い合わせ
               </button>
             </li>
           </ul>

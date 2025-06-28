@@ -1,31 +1,32 @@
 import '../pages/About2.css';
-import AboutHeader from '../components/AboutHeader';
 
 function About() {
   return (
     <div className="about-page">
       <div className="about-container">
-        <AboutHeader />
+        <div className="overview-title-section">
+          <h1 className="overview-title">このページは私、瀧川颯太のことを紹介するページです</h1>
+        </div>
         
         <div className="about-content">
           <div className="about-image">
             <img 
               src="https://via.placeholder.com/250x250" 
-              alt="プロフィール画像" 
+              alt="瀧川颯太のプロフィール画像" 
               className="profile-image"
             />
           </div>
           
           <div className="about-details">
-            <h2>私について</h2>
+            <h2>自己紹介</h2>
             <p>
-              はじめまして！わたしは瀧川颯太です！
-              創造的な問題解決とユーザー体験の向上に情熱を注いでいます。
+              はじめまして！私は瀧川颯太です。
+              このサイトでは私の生まれや性格、趣味などについて紹介しています。
             </p>
             <p>
-              大学でコンピュータサイエンスを学び、卒業後はフロントエンド開発を中心に
-              様々なプロジェクトに携わってきました。最新の技術トレンドを常に学び、
-              効率的で美しいウェブアプリケーションの開発を目指しています。
+              普段はゲームと読書を楽しんでおり、特に仮面ライダーやVtuberが大好きです。
+              また、新しい技術や知識を学ぶことに興味があり、
+              日々成長していきたいと思っています。
             </p>
 
             <div className="hobbies-section">
@@ -33,20 +34,12 @@ function About() {
                 <h2>趣味</h2>
                 <div className="hobby-items">
                   <div className="hobby-item">
-                    <h3 className="hobby-name">映画鑑賞</h3>
-                    <p className="hobby-description">特にSF・アクション映画が好きです</p>
+                    <h3 className="hobby-name">ゲーム</h3>
+                    <p className="hobby-description">様々なジャンルのゲームを楽しんでいます</p>
                   </div>
                   <div className="hobby-item">
                     <h3 className="hobby-name">読書</h3>
-                    <p className="hobby-description">技術書からフィクションまで幅広く読みます</p>
-                  </div>
-                  <div className="hobby-item">
-                    <h3 className="hobby-name">音楽鑑賞</h3>
-                    <p className="hobby-description">ロック・ポップス・クラシック音楽を聴きます</p>
-                  </div>
-                  <div className="hobby-item">
-                    <h3 className="hobby-name">料理</h3>
-                    <p className="hobby-description">新しいレシピに挑戦するのが好きです</p>
+                    <p className="hobby-description">小説からビジネス書まで幅広く読みます</p>
                   </div>
                 </div>
               </div>

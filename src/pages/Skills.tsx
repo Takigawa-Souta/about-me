@@ -1,45 +1,57 @@
 import './Skills.css'
-import SkillsHeader from '../components/SkillsHeader'
 
 function Skills() {
-  const hobbyCategories = [
-    {
-      title: "趣味・娯楽",
-      items: [
-        { name: "映画鑑賞", description: "特にSF・アクション映画が好きです" },
-        { name: "読書", description: "技術書からフィクションまで幅広く読みます" },
-        { name: "音楽鑑賞", description: "ロック・ポップス・クラシック音楽を聴きます" },
-        { name: "ゲーム", description: "RPG・ストラテジーゲームを楽しんでいます" },
-        { name: "料理", description: "新しいレシピに挑戦するのが好きです" }
-      ]
-    },
-    {
-      title: "好きなもの",
-      items: [
-        { name: "コーヒー", description: "毎朝のコーヒーが日課です" },
-        { name: "カメラ", description: "風景写真を撮るのが趣味です" },
-        { name: "旅行", description: "新しい場所を探索するのが好きです" },
-        { name: "アート", description: "美術館巡りやデザイン鑑賞を楽しみます" }
-      ]
-    },
-    {
-      title: "学びたいこと",
-      items: [
-        { name: "機械学習・AI", description: "データサイエンスに興味があります" },
-        { name: "UI/UXデザイン", description: "より良いユーザー体験を提供したいです" },
-        { name: "モバイル開発", description: "React NativeやFlutterを学びたいです" },
-        { name: "クラウド技術", description: "AWSやGCPの知識を深めたいです" }
-      ]
-    }
-  ]
+  const hobbyData = {
+    title: "趣味について",
+    subtitle: "ゲームと読書のどこが好きか教えるページです",
+    categories: [
+      {
+        title: "ゲーム",
+        items: [
+          { 
+            name: "RPGゲーム", 
+            description: "ストーリーやキャラクター成長が楽しめるゲームが大好きです" 
+          },
+          { 
+            name: "アクションゲーム", 
+            description: "スリルとテクニックが求められるゲームで遊ぶのが好きです" 
+          },
+          { 
+            name: "パズルゲーム", 
+            description: "頭を使って解く問題が面白く、達成感があります" 
+          }
+        ]
+      },
+      {
+        title: "読書",
+        items: [
+          { 
+            name: "小説", 
+            description: "様々なジャンルの物語を読んで想像力を広げています" 
+          },
+          { 
+            name: "技術書", 
+            description: "プログラミングやIT関連の知識を深めるために読んでいます" 
+          },
+          { 
+            name: "自己啓発書", 
+            description: "成長につながる考え方やスキルを学んでいます" 
+          }
+        ]
+      }
+    ]
+  }
 
   return (
     <div className="skills-page">
       <div className="skills-container">
-        <SkillsHeader />
+        <div className="hobby-header">
+          <h1>{hobbyData.title}</h1>
+          <p className="hobby-subtitle">{hobbyData.subtitle}</p>
+        </div>
         
         <div className="skills-grid">
-          {hobbyCategories.map((category, index) => (
+          {hobbyData.categories.map((category, index) => (
             <div key={index} className="skill-category">
               <h2>{category.title}</h2>
               <div className="skills-list">

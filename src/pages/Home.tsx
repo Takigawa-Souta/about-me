@@ -1,4 +1,4 @@
-import './Home.css'
+
 
 type PageType = 'home' | 'about' | 'skills' | 'projects' | 'contact' | 'favorites'
 
@@ -11,8 +11,8 @@ function Home({ onNavigate }: HomeProps) {
     <div className="home">
       <section className="hero">
         <div className="hero-content">
-          <h1>Welcome to My Portfolio</h1>
-          <p className="hero-subtitle">私の作品とスキルをご紹介します</p>
+          <h1 className="home-title">瀧川 颯太の紹介サイト</h1>
+          <p className="hero-subtitle">私の生まれや性格、趣味、好きなもの、学習目標について紹介します</p>
           <div className="hero-buttons">
             <button 
               onClick={() => onNavigate('about')} 
@@ -21,10 +21,10 @@ function Home({ onNavigate }: HomeProps) {
               自己紹介を見る
             </button>
             <button 
-              onClick={() => onNavigate('projects')} 
+              onClick={() => onNavigate('contact')} 
               className="btn btn-secondary"
             >
-              プロジェクトを見る
+              お問い合わせ
             </button>
           </div>
         </div>
@@ -34,20 +34,20 @@ function Home({ onNavigate }: HomeProps) {
         <div className="container">
           <div className="preview-grid">
             <div className="preview-card" onClick={() => onNavigate('about')}>
-              <h3>私について</h3>
-              <p>経歴やスキル、趣味について詳しく紹介しています。</p>
+              <h3>概要</h3>
+              <p>私の生まれや性格などについてのページです</p>
             </div>
             <div className="preview-card" onClick={() => onNavigate('skills')}>
               <h3>趣味</h3>
-              <p>私の趣味や日常の楽しみについて紹介しています。</p>
+              <p>ゲームと読書のどこが好きか教えるページです</p>
             </div>
             <div className="preview-card" onClick={() => onNavigate('favorites')}>
               <h3>好きなもの</h3>
-              <p>私が愛用しているアイテムや好きなことを紹介しています。</p>
+              <p>好きなものである仮面ライダーとVtuberについて教えるページです</p>
             </div>
             <div className="preview-card" onClick={() => onNavigate('projects')}>
-              <h3>学習目標</h3>
-              <p>今後学びたい技術や目標について紹介しています。</p>
+              <h3>勉強したいこと、意気込み</h3>
+              <p>今勉強してることやしていきたいことについてのページです</p>
             </div>
           </div>
         </div>
@@ -56,8 +56,8 @@ function Home({ onNavigate }: HomeProps) {
       <section className="contact-section">
         <div className="container">
           <div className="contact-cta">
-            <h2>お気軽にお問い合わせください</h2>
-            <p>プロジェクトのご相談やご質問がございましたら、お気軽にご連絡ください。</p>
+            <h2>問い合わせ</h2>
+            <p>お問い合わせはこちらから</p>
             <button 
               onClick={() => onNavigate('contact')} 
               className="btn btn-contact"
