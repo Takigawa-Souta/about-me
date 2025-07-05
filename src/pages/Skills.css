@@ -1,6 +1,6 @@
 .skills-page {
   padding: 2rem 0;
-  background: #f8f9fa;
+  background: #f7fafc;
   min-height: calc(100vh - 200px);
 }
 
@@ -16,16 +16,24 @@
   padding: 2rem 0;
 }
 
+.hobby-title {
+  font-size: 2.2rem;
+  color: #2c5aa0;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
 .hobby-header h1 {
   font-size: 2.5rem;
-  color: #333;
+  color: #2c5aa0;
   margin-bottom: 1rem;
   font-weight: 600;
 }
 
 .hobby-subtitle {
   font-size: 1.2rem;
-  color: #666;
+  color: #1a365d;
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.6;
@@ -41,20 +49,20 @@
   background: white;
   padding: 2rem;
   border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 15px rgba(49, 130, 206, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .skill-category:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 25px rgba(49, 130, 206, 0.2);
 }
 
 .skill-category h2 {
-  color: #667eea;
+  color: #3182ce;
   font-size: 1.8rem;
   margin-bottom: 1.5rem;
-  border-bottom: 3px solid #667eea;
+  border-bottom: 3px solid #3182ce;
   padding-bottom: 0.5rem;
   text-align: center;
 }
@@ -67,16 +75,16 @@
 
 .hobby-item {
   padding: 1.5rem;
-  background: #f8f9fa;
+  background: #f7fafc;
   border-radius: 10px;
-  border-left: 4px solid #667eea;
+  border-left: 4px solid #3182ce;
   transition: all 0.3s ease;
 }
 
 .hobby-item:hover {
-  background: #e9ecef;
+  background: #e6f3ff;
   transform: translateX(5px);
-  border-left-color: #764ba2;
+  border-left-color: #2c5aa0;
 }
 
 .hobby-info {
@@ -86,13 +94,13 @@
 
 .hobby-name {
   font-weight: 600;
-  color: #333;
+  color: #2c5aa0;
   font-size: 1.2rem;
   margin: 0 0 0.5rem 0;
 }
 
 .hobby-description {
-  color: #666;
+  color: #1a365d;
   font-size: 1rem;
   line-height: 1.6;
   margin: 0;
@@ -133,4 +141,51 @@
   .hobby-subtitle {
     font-size: 1rem;
   }
+}
+
+/* ダークモード */
+.dark-mode .skills-page {
+  background: #1a1a2e;
+  color: #a8e6a1;
+}
+
+.dark-mode .hobby-title {
+  color: #a8e6a1;
+}
+
+.dark-mode .hobby-header h1 {
+  color: #66c86e;
+}
+
+.dark-mode .hobby-subtitle {
+  color: #7dd87f;
+}
+
+.dark-mode .skill-category {
+  background: rgba(255, 255, 255, 0.08);
+  color: #a8e6a1;
+}
+
+.dark-mode .skill-category h2 {
+  color: #66c86e;
+  border-bottom-color: #66c86e;
+}
+
+.dark-mode .hobby-item {
+  background: rgba(255, 255, 255, 0.08);
+  border-left-color: #66c86e;
+}
+
+.dark-mode .hobby-item:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-left-color: #a8e6a1;
+}
+
+.dark-mode .hobby-name {
+  color: #a8e6a1;
+}
+
+.dark-mode .hobby-description,
+.dark-mode .hobby-content {
+  color: #7dd87f;
 }

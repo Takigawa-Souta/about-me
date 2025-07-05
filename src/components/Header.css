@@ -1,8 +1,8 @@
 .header {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #3182ce 0%, #2c5aa0 100%);
   color: white;
   padding: 1rem 0;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(49, 130, 206, 0.2);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -17,6 +17,7 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 1rem;
+  position: relative;
 }
 
 .logo {
@@ -43,74 +44,205 @@
 }
 
 .nav {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 100;
 }
+
+.nav.nav-open {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+/* デスクトップでもナビゲーションの開閉機能を有効にする */
 
 .nav-list {
   display: flex;
+  flex-direction: column;
   list-style: none;
   margin: 0;
-  padding: 0;
-  gap: 0.5rem;
-  flex-wrap: wrap;
+  padding: 1rem 0;
+  gap: 0;
+  width: 100%;
 }
 
 .nav-link {
   background: none;
   border: none;
   color: white;
-  padding: 0.8rem 1.2rem;
-  border-radius: 8px;
+  padding: 1rem 2rem;
+  border-radius: 0;
   cursor: pointer;
   transition: all 0.3s ease;
   font-size: 1rem;
   font-weight: 500;
   text-decoration: none;
   white-space: nowrap;
+  width: 100%;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-link:last-child {
+  border-bottom: none;
 }
 
 .nav-link:hover {
   background: rgba(255, 255, 255, 0.15);
-  transform: translateY(-1px);
+  transform: none;
 }
 
 .nav-link.active {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: inset 4px 0 0 rgba(255, 255, 255, 0.5);
+}
+
+/* ハンバーガーメニューボタン - 全ての画面サイズで表示 */
+.menu-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 110;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.menu-toggle:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  width: 24px;
+  height: 18px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.hamburger-line {
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  transition: all 0.3s ease;
+  margin: 2px 0;
+}
+
+.hamburger.open .hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger.open .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* ヘッダーコントロール */
+.header-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode-toggle,
+.language-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 0.8rem 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  font-weight: 500;
+  width: 100%;
+  justify-content: center;
+}
+
+.dark-mode-toggle:hover,
+.language-toggle:hover {
   background: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-1px);
+}
+
+.toggle-icon {
+  font-size: 1.1rem;
+}
+
+.toggle-text {
+  font-size: 0.85rem;
+}
+
+/* ダークモード */
+.dark-mode .header {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+}
+
+.dark-mode .nav {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+}
+
+.dark-mode .dark-mode-toggle {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #a8e6a1;
+}
+
+.dark-mode .dark-mode-toggle:hover {
+  background: rgba(255, 255, 255, 0.25);
 }
 
 /* レスポンシブデザイン */
 @media (max-width: 768px) {
   .header-container {
-    flex-direction: column;
-    text-align: center;
+    flex-direction: row;
+    text-align: left;
     padding: 0 1rem;
+    justify-content: space-between;
   }
   
   .logo {
     font-size: 1.3rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0;
   }
   
   .header-title {
     font-size: 1.5rem;
   }
-  
+
+  /* モバイルでのナビゲーション調整 */
   .nav {
-    justify-content: center;
-    width: 100%;
-  }
-  
-  .nav-list {
-    justify-content: center;
-    gap: 0.3rem;
+    border-radius: 0;
   }
   
   .nav-link {
-    padding: 0.6rem 0.8rem;
-    font-size: 0.9rem;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+
+  .nav-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: none;
   }
 }
 
@@ -118,16 +250,17 @@
   .header-container {
     padding: 0 0.5rem;
   }
+
+  .logo {
+    font-size: 1.1rem;
+  }
   
-  .nav-list {
-    flex-direction: column;
-    width: 100%;
-    gap: 0.3rem;
+  .header-title {
+    font-size: 1.3rem;
   }
   
   .nav-link {
-    width: 100%;
-    text-align: center;
-    padding: 0.7rem;
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
   }
 }

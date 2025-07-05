@@ -1,6 +1,6 @@
 .contact-page {
   padding: 2rem 0;
-  background: #f8f9fa;
+  background: #f7fafc;
   min-height: calc(100vh - 200px);
 }
 
@@ -18,14 +18,14 @@
 
 .contact-header h1 {
   font-size: 2.5rem;
-  color: #333;
+  color: #2c5aa0;
   margin-bottom: 1rem;
   font-weight: 600;
 }
 
 .contact-header p {
   font-size: 1.2rem;
-  color: #666;
+  color: #1a365d;
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.6;
@@ -42,14 +42,14 @@
   background: white;
   padding: 2rem;
   border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 15px rgba(49, 130, 206, 0.1);
 }
 
 .contact-info h2 {
-  color: #333;
+  color: #2c5aa0;
   margin-bottom: 2rem;
   font-size: 1.8rem;
-  border-bottom: 3px solid #667eea;
+  border-bottom: 3px solid #3182ce;
   padding-bottom: 0.5rem;
 }
 
@@ -59,13 +59,13 @@
   gap: 1rem;
   margin-bottom: 1.5rem;
   padding: 1rem;
-  background: #f8f9fa;
+  background: #f7fafc;
   border-radius: 10px;
   transition: all 0.3s ease;
 }
 
 .contact-item:hover {
-  background: #e9ecef;
+  background: #e6f3ff;
   transform: translateX(5px);
 }
 
@@ -76,20 +76,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: linear-gradient(135deg, #3182ce, #2c5aa0);
   color: white;
   border-radius: 50%;
 }
 
 .contact-item h3 {
-  color: #333;
+  color: #2c5aa0;
   margin: 0 0 0.2rem 0;
   font-size: 1.1rem;
   font-weight: 600;
 }
 
 .contact-item p {
-  color: #666;
+  color: #1a365d;
   margin: 0;
   font-size: 0.9rem;
 }
@@ -98,14 +98,14 @@
   background: white;
   padding: 2rem;
   border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 15px rgba(49, 130, 206, 0.1);
 }
 
 .contact-form h2 {
-  color: #333;
+  color: #2c5aa0;
   margin-bottom: 2rem;
   font-size: 1.8rem;
-  border-bottom: 3px solid #667eea;
+  border-bottom: 3px solid #3182ce;
   padding-bottom: 0.5rem;
 }
 
@@ -116,7 +116,7 @@
 .form-group label {
   display: block;
   margin-bottom: 0.5rem;
-  color: #333;
+  color: #2c5aa0;
   font-weight: 500;
 }
 
@@ -124,7 +124,7 @@
 .form-group textarea {
   width: 100%;
   padding: 0.8rem;
-  border: 1px solid #ddd;
+  border: 1px solid #cbd5e0;
   border-radius: 8px;
   font-size: 1rem;
   transition: border-color 0.3s ease;
@@ -133,8 +133,8 @@
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #667eea;
-  box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.2);
+  border-color: #3182ce;
+  box-shadow: 0 0 0 2px rgba(49, 130, 206, 0.2);
 }
 
 .form-group textarea {
@@ -143,7 +143,7 @@
 }
 
 .submit-btn {
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: linear-gradient(135deg, #3182ce, #2c5aa0);
   color: white;
   border: none;
   padding: 1rem 2rem;
@@ -157,7 +157,7 @@
 
 .submit-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 5px 15px rgba(49, 130, 206, 0.4);
 }
 
 .social-links {
@@ -193,9 +193,100 @@
 }
 
 .social-link:hover {
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: linear-gradient(135deg, #3182ce, #2c5aa0);
   color: white;
   transform: translateY(-2px);
+}
+
+.location-link {
+  color: inherit; /* 親要素の文字色を継承 */
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.location-link:hover {
+  color: #3182ce; /* ライトモードのホバー色 */
+}
+
+/* ダークモード */
+.dark-mode .contact-page {
+  background: #1a1a2e;
+  color: #a8e6a1;
+}
+
+.dark-mode .contact-header h1 {
+  color: #66c86e;
+}
+
+.dark-mode .contact-content {
+  color: #7dd87f;
+}
+
+.dark-mode .contact-email {
+  color: #a8e6a1;
+}
+
+.dark-mode .contact-info,
+.dark-mode .contact-form {
+  background: rgba(255, 255, 255, 0.08);
+  color: #a8e6a1;
+}
+
+.dark-mode .contact-info h2,
+.dark-mode .contact-form h2 {
+  color: #66c86e;
+  border-bottom-color: #66c86e;
+}
+
+.dark-mode .contact-item {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.dark-mode .contact-item:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.dark-mode .contact-item h3 {
+  color: #a8e6a1;
+}
+
+.dark-mode .contact-item p {
+  color: #7dd87f;
+}
+
+.dark-mode .form-group label {
+  color: #a8e6a1;
+}
+
+.dark-mode .form-group input,
+.dark-mode .form-group textarea {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #a8e6a1;
+}
+
+.dark-mode .form-group input:focus,
+.dark-mode .form-group textarea:focus {
+  border-color: #66c86e;
+  box-shadow: 0 0 0 2px rgba(102, 200, 110, 0.2);
+}
+
+.dark-mode .submit-btn {
+  background: linear-gradient(135deg, #66c86e, #4caf50);
+}
+
+.dark-mode .submit-btn:hover {
+  box-shadow: 0 5px 15px rgba(102, 200, 110, 0.4);
+}
+
+.dark-mode .social-link {
+  background: rgba(255, 255, 255, 0.08);
+  color: #a8e6a1;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.dark-mode .social-link:hover {
+  background: linear-gradient(135deg, #66c86e, #4caf50);
 }
 
 @media (max-width: 768px) {

@@ -44,23 +44,8 @@
 }
 
 .about-content {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 3rem;
-  align-items: start;
-}
-
-.about-image {
-  text-align: center;
-}
-
-.profile-image {
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 5px solid #667eea;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  display: block;
+  width: 100%;
 }
 
 .about-details {
@@ -68,6 +53,8 @@
   padding: 2rem;
   border-radius: 15px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: none;
 }
 
 .about-details h2 {
@@ -197,13 +184,8 @@
 
 @media (max-width: 768px) {
   .about-content {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  
-  .profile-image {
-    width: 200px;
-    height: 200px;
+    display: block;
+    width: 100%;
   }
   
   .about-header h1 {
@@ -227,4 +209,49 @@
   .learning-item {
     padding: 0.8rem;
   }
+}
+
+/* ダークモード */
+.dark-mode .about-page {
+  background: #1a1a2e;
+  color: #a8e6a1;
+}
+
+.dark-mode .overview-title {
+  color: #66c86e;
+}
+
+.dark-mode .about-details {
+  background: rgba(255, 255, 255, 0.08);
+  color: #a8e6a1;
+}
+
+.dark-mode .about-details h2 {
+  color: #66c86e;
+  border-bottom-color: #66c86e;
+}
+
+.dark-mode .about-details p {
+  color: #7dd87f;
+}
+
+.dark-mode .hobby-item,
+.dark-mode .learning-item {
+  background: rgba(255, 255, 255, 0.08);
+  border-left-color: #66c86e;
+}
+
+.dark-mode .hobby-item:hover,
+.dark-mode .learning-item:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.dark-mode .hobby-name,
+.dark-mode .learning-name {
+  color: #a8e6a1;
+}
+
+.dark-mode .hobby-description,
+.dark-mode .learning-description {
+  color: #7dd87f;
 }

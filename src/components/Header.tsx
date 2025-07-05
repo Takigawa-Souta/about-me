@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import './Header.css'
 
 type PageType = 'home' | 'about' | 'skills' | 'projects' | 'contact' | 'favorites'
@@ -5,11 +6,22 @@ type PageType = 'home' | 'about' | 'skills' | 'projects' | 'contact' | 'favorite
 interface HeaderProps {
   currentPage: PageType
   onNavigate: (page: PageType) => void
+  isDarkMode: boolean
+  onToggleDarkMode: () => void
+  isEnglish: boolean
+  onToggleLanguage: () => void
 }
 
-function Header({ currentPage, onNavigate }: HeaderProps) {
+function Header({ currentPage, onNavigate, isDarkMode, onToggleDarkMode, isEnglish, onToggleLanguage }: HeaderProps) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
   const handleNavClick = (page: PageType) => {
     onNavigate(page)
+    setIsMenuOpen(false) // ナビゲーション後はメニューを閉じる
+  }
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen)
   }
 
   return (
@@ -19,16 +31,30 @@ function Header({ currentPage, onNavigate }: HeaderProps) {
           onClick={() => handleNavClick('home')} 
           className="logo header-title"
         >
-          <span>自己紹介サイト</span>
+          <span>{isEnglish ? 'Portfolio Site' : '自己紹介サイト'}</span>
         </button>
-        <nav className="nav">
+        
+        {/* ハンバーガーメニューボタン */}
+        <button 
+          className="menu-toggle"
+          onClick={toggleMenu}
+          aria-label="メニューを開く"
+        >
+          <span className={`hamburger ${isMenuOpen ? 'open' : ''}`}>
+            <span className="hamburger-line"></span>
+            <span className="hamburger-line"></span>
+            <span className="hamburger-line"></span>
+          </span>
+        </button>
+
+        <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
           <ul className="nav-list">
             <li>
               <button 
                 onClick={() => handleNavClick('home')}
                 className={`nav-link ${currentPage === 'home' ? 'active' : ''}`}
               >
-                ホーム
+                {isEnglish ? 'Home' : 'ホーム'}
               </button>
             </li>
             <li>
@@ -36,7 +62,7 @@ function Header({ currentPage, onNavigate }: HeaderProps) {
                 onClick={() => handleNavClick('about')}
                 className={`nav-link ${currentPage === 'about' ? 'active' : ''}`}
               >
-                概要
+                {isEnglish ? 'About' : '概要'}
               </button>
             </li>
             <li>
@@ -44,7 +70,7 @@ function Header({ currentPage, onNavigate }: HeaderProps) {
                 onClick={() => handleNavClick('skills')}
                 className={`nav-link ${currentPage === 'skills' ? 'active' : ''}`}
               >
-                趣味
+                {isEnglish ? 'Hobbies' : '趣味'}
               </button>
             </li>
             <li>
@@ -52,7 +78,7 @@ function Header({ currentPage, onNavigate }: HeaderProps) {
                 onClick={() => handleNavClick('favorites')}
                 className={`nav-link ${currentPage === 'favorites' ? 'active' : ''}`}
               >
-                好きなもの
+                {isEnglish ? 'Favorites' : '好きなもの'}
               </button>
             </li>
             <li>
@@ -60,7 +86,7 @@ function Header({ currentPage, onNavigate }: HeaderProps) {
                 onClick={() => handleNavClick('projects')}
                 className={`nav-link ${currentPage === 'projects' ? 'active' : ''}`}
               >
-                勉強したいこと・意気込み
+                {isEnglish ? 'Learning Goals' : '勉強したいこと・意気込み'}
               </button>
             </li>
             <li>
@@ -68,10 +94,40 @@ function Header({ currentPage, onNavigate }: HeaderProps) {
                 onClick={() => handleNavClick('contact')}
                 className={`nav-link ${currentPage === 'contact' ? 'active' : ''}`}
               >
-                お問い合わせ
+                {isEnglish ? 'Contact' : 'お問い合わせ'}
               </button>
             </li>
           </ul>
+          
+          {/* ダークモード切り替えボタン */}
+          <div className="header-controls">
+            <button 
+              onClick={onToggleDarkMode}
+              className="dark-mode-toggle"
+              aria-label={isDarkMode ? 'ライトモードに切り替え' : 'ダークモードに切り替え'}
+            >
+              <span className="toggle-icon">
+                {isDarkMode ? '☀️' : '🌙'}
+              </span>
+              <span className="toggle-text">
+                {isDarkMode ? (isEnglish ? 'Light' : 'ライト') : (isEnglish ? 'Dark' : 'ダーク')}
+              </span>
+            </button>
+            
+            {/* 言語切り替えボタン */}
+            <button 
+              onClick={onToggleLanguage}
+              className="language-toggle"
+              aria-label={isEnglish ? 'Switch to Japanese' : '英語に切り替え'}
+            >
+              <span className="toggle-icon">
+                {isEnglish ? '🇯🇵' : '🇺🇸'}
+              </span>
+              <span className="toggle-text">
+                {isEnglish ? 'JP' : 'EN'}
+              </span>
+            </button>
+          </div>
         </nav>
       </div>
     </header>
