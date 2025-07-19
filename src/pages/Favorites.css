@@ -54,8 +54,6 @@
 }
 
 .favorites-items {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1rem;
   margin-top: 1.5rem;
 }
@@ -181,4 +179,35 @@
   .favorites-section {
     padding: 1rem;
   }
+}
+@media (max-width: 480px) {
+  .media-wrapper {
+    aspect-ratio: 16 / 9;
+    min-width: 0;
+    margin: 0.5rem 0;
+    border-radius: 6px;
+  }
+  .media-wrapper iframe {
+    border-radius: 6px;
+  }
+}
+/* 動画やマルチメディア用ラッパー */
+.media-wrapper {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #222;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 1rem 0;
+  box-shadow: 0 4px 16px rgba(49,130,206,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.media-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
 }

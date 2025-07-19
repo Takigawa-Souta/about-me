@@ -31,12 +31,16 @@ function Favorites({ isEnglish }: FavoritesProps) {
             <div className="favorites-items">
               <div className="favorite-item">
                 <h3 className="likes-berts">
+                  <img src="/images/電王ベルト.jpg" alt="電王のベルト" />
                   {isEnglish ? "Den-O's Belt" : "電王のベルト"}
                 </h3>
               </div>
               <div className="favorite-item">
                 <h3 className="likes-berts">
-                  {isEnglish ? "Skull's Belt" : "スカルのベルト"}
+                  <a href="https://p-bandai.jp/item/item-1000231202/?srsltid=AfmBOorFPE73GobquUl21AkVysmxNjxwyzUiLp4HFIgfPT_2-2ktatjw" target="_blank" rel="noopener noreferrer">
+                    <img src="/images/skrdriver.png" alt="スカルのベルト" />
+                    {isEnglish ? "Skull's Belt" : "スカルのベルト"}
+                  </a>
                 </h3>
               </div>
             </div>
@@ -55,16 +59,25 @@ function Favorites({ isEnglish }: FavoritesProps) {
             <div className="favorites-items">
               <div className="favorite-item">
                 <h3 className="likes-movies">
+                  <div className="media-wrapper">
+                    <iframe src="https://www.youtube.com/embed/UL0qzYDkmQo?si=RfSf8cS19xLZZ5dx" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+                  </div>
                   {isEnglish ? 'Aogiri High School Recommended Videos' : 'あおぎり高校のおすすめ動画'}
                 </h3>
               </div>
               <div className="favorite-item">
                 <h3 className="likes-movies">
+                  <div className="media-wrapper">
+                    <iframe src="https://www.youtube.com/embed/b6yFs5mteBY?si=062XLATcuAOQ2jz5" title="YouTube video player"allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+                  </div>
                   {isEnglish ? '7th Dimension Student Council Recommended Videos' : '7次元生徒会のおすすめ動画'}
                 </h3>
               </div>
               <div className="favorite-item">
                 <h3 className="likes-movies">
+                  <div className="media-wrapper">
+                    <iframe src="https://www.youtube.com/embed/WgUjsSg3pL0?si=WoCuKZLI7LsCrgv-" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+                  </div>
                   {isEnglish ? 'Nekomugi Tororo Recommended Videos' : '猫麦とろろのおすすめ動画'}
                 </h3>
               </div>
