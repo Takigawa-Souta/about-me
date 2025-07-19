@@ -40,22 +40,43 @@ function Home({ onNavigate, isEnglish }: HomeProps) {
       
       <section className="home-preview">
         <div className="container">
-          <div className="preview-grid">
-            <div className="preview-card" onClick={() => onNavigate('about')}>
-              <h3>{isEnglish ? 'About' : '概要'}</h3>
-              <p>{isEnglish ? 'Page about my background and personality' : '私の生まれや性格などについてのページです'}</p>
+          <div className="preview-section">
+            <h2 className="section-title">
+              {isEnglish ? 'About Me' : '私について'}
+            </h2>
+            <div className="preview-grid">
+              <div className="preview-card" onClick={() => onNavigate('about')}>
+                <h3>{isEnglish ? 'Profile' : '概要'}</h3>
+                <p>{isEnglish ? 'Page about my background and personality' : '私の生まれや性格などについてのページです'}</p>
+              </div>
             </div>
-            <div className="preview-card" onClick={() => onNavigate('skills')}>
-              <h3>{isEnglish ? 'Hobbies' : '趣味'}</h3>
-              <p>{isEnglish ? 'What I like about games and reading' : 'ゲームと読書のどこが好きか教えるページです'}</p>
+          </div>
+
+          <div className="preview-section">
+            <h2 className="section-title">
+              {isEnglish ? 'Interests & Hobbies' : '趣味・興味'}
+            </h2>
+            <div className="preview-grid">
+              <div className="preview-card" onClick={() => onNavigate('skills')}>
+                <h3>{isEnglish ? 'Hobbies' : '趣味'}</h3>
+                <p>{isEnglish ? 'What I like about games and reading' : 'ゲームと読書のどこが好きか教えるページです'}</p>
+              </div>
+              <div className="preview-card" onClick={() => onNavigate('favorites')}>
+                <h3>{isEnglish ? 'Favorites' : '好きなもの'}</h3>
+                <p>{isEnglish ? 'About my favorite things like Kamen Rider and VTubers' : '好きなものである仮面ライダーとVtuberについて教えるページです'}</p>
+              </div>
             </div>
-            <div className="preview-card" onClick={() => onNavigate('favorites')}>
-              <h3>{isEnglish ? 'Favorites' : '好きなもの'}</h3>
-              <p>{isEnglish ? 'About my favorite things like Kamen Rider and VTubers' : '好きなものである仮面ライダーとVtuberについて教えるページです'}</p>
-            </div>
-            <div className="preview-card" onClick={() => onNavigate('projects')}>
-              <h3>{isEnglish ? 'Learning Goals' : '勉強したいこと、意気込み'}</h3>
-              <p>{isEnglish ? 'About what I\'m studying and want to learn' : '今勉強してることやしていきたいことについてのページです'}</p>
+          </div>
+
+          <div className="preview-section">
+            <h2 className="section-title">
+              {isEnglish ? 'Learning & Goals' : '学習・目標'}
+            </h2>
+            <div className="preview-grid">
+              <div className="preview-card" onClick={() => onNavigate('projects')}>
+                <h3>{isEnglish ? 'Learning Goals' : '勉強したいこと、意気込み'}</h3>
+                <p>{isEnglish ? 'About what I\'m studying and want to learn' : '今勉強してることやしていきたいことについてのページです'}</p>
+              </div>
             </div>
           </div>
         </div>
