@@ -1,54 +1,59 @@
-# React + TypeScript + Vite
+# About Me 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+サイトURL: https://takigawa-souta.github.io/about-me/
 
-Currently, two official plugins are available:
+このサイトは私が自己紹介をするために作成しました
+好きなことや趣味などみんなに知ってほしいこと、みんなにも見てほしいことなどについて書きました
+また勉強してるところも書いて協力してほしいなと思っています
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+# 課題の紹介
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## TOP
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- TOPページでは全ページに遷移しやすいようにしてなるべく見やすいようにしました
+- デザインのお手本とかはあまりなく自分らしさを出したいのがあり自分で考えました
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 自己紹介のページ
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- 自分の軽い概要について話すページを作りました
+- 個人的には自分のことを考えるのが苦労しました。あとは見やすい分量などを考えるのも大変でした
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## お問い合わせ
+
+- お問い合わせページはマップを挿入しました！
+
+# 好きなもの
+
+- 自分の好きなものについて語りたくなったので作りました 
+- リンクや画像を挿入し想像しやすいようにしました
+
+# 趣味
+
+- 自分が毎日することについてのページを書きました 
+- 
+
+# 勉強したいこと
+
+- 私が今勉強していることと取りたい資格について書きました 
+- 
+
+# 一番見てほしいところ
+
+- ダークモード機能の実装と英語機能を搭載してるところを見てほしいです！
+
+# 力を入れた点
+
+- 書くのはCopilotが多かったですがミスやデザインのズレがないかなど自分でもJavaScriptなどの知識をつけていきました！
+
+## 実装面
+
+- ダークモードやマルチメディア対応、英語機能の実装など
+- なるべく合ったらいいなという機能を考えて実装したところです！
+- JavaScriptなど習っていないところを調べたりしながらエラーを見て修正していくのに時間がかかりました
+
+## デザイン面
+
+- IT系らしい色合いや見やすい見出しの大きさなど細かい統一感とページごとの違いも考えました
+- AIを使ってるとデザイン系が似てしまうので自分らしいデザインにするためにコードを見返して書きなしているところです
+- ダークモードもあったりタグの量も多く見直しや修正に時間がかかったところです
