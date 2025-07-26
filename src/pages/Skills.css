@@ -1,0 +1,32 @@
+
+.skills-container {
+    padding: 20px;
+  }
+  
+  .skills-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .skills-category {
+    margin-bottom: 20px;
+  }
+  
+  .skills-category h3 {
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .skills-category ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .skills-category li {
+    background: #f4f4f4;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
