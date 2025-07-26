@@ -4,12 +4,12 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import Home from './pages/Home'
 import About from './pages/About'
-import Skills from './pages/Skills'
+import Hobby from './pages/Hobby'
 import Projects from './pages/Projects'
 import Contact from './pages/Contact'
 import Favorites from './pages/Favorites'
 
-type PageType = 'home' | 'about' | 'skills' | 'projects' | 'contact' | 'favorites'
+type PageType = 'home' | 'about' | 'hobby' | 'projects' | 'contact' | 'favorites'
 
 function App() {
   const [currentPage, setCurrentPage] = useState<PageType>('home')
@@ -58,8 +58,8 @@ function App() {
         return <Home onNavigate={handleNavigate} isEnglish={isEnglish} />
       case 'about':
         return <About isEnglish={isEnglish} />
-      case 'skills':
-        return <Skills isEnglish={isEnglish} />
+      case 'hobby':
+        return <Hobby isEnglish={isEnglish} />
       case 'projects':
         return <Projects isEnglish={isEnglish} />
       case 'contact':

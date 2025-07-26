@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './Header.css'
 
-type PageType = 'home' | 'about' | 'skills' | 'projects' | 'contact' | 'favorites'
+type PageType = 'home' | 'about' | 'hobby' | 'projects' | 'contact' | 'favorites'
 
 interface HeaderProps {
   currentPage: PageType
@@ -67,8 +67,8 @@ function Header({ currentPage, onNavigate, isDarkMode, onToggleDarkMode, isEngli
             </li>
             <li>
               <button 
-                onClick={() => handleNavClick('skills')}
-                className={`nav-link ${currentPage === 'skills' ? 'active' : ''}`}
+                onClick={() => handleNavClick('hobby')}
+                className={`nav-link ${currentPage === 'hobby' ? 'active' : ''}`}
               >
                 {isEnglish ? 'Hobbies' : '趣味'}
               </button>

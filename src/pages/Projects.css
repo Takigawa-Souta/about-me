@@ -37,7 +37,8 @@
 }
 
 .current-studies h2,
-.future-goals h2 {
+.future-goals h2,
+.certifications h2 {
   color: #3182ce;
   font-size: 2rem;
   margin-bottom: 2rem;
@@ -168,7 +169,8 @@
 }
 
 .dark-mode .current-studies h2,
-.dark-mode .future-goals h2 {
+.dark-mode .future-goals h2, 
+.dark-mode .certifications h2 {
   color: #66c86e;
   border-bottom-color: #66c86e;
 }

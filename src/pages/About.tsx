@@ -1,10 +1,12 @@
 import '../pages/About2.css';
+import { useScrollPosition } from '../hooks/useScrollPosition';
 
 interface AboutProps {
   isEnglish: boolean
 }
 
 function About({ isEnglish }: AboutProps) {
+  useScrollPosition('about');
   return (
     <div className="about-page">
       <div className="about-container">

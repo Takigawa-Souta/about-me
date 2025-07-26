@@ -1,6 +1,8 @@
 
+import { useScrollPosition } from '../hooks/useScrollPosition';
+import './Home.css';
 
-type PageType = 'home' | 'about' | 'skills' | 'projects' | 'contact' | 'favorites'
+type PageType = 'home' | 'about' | 'hobby' | 'projects' | 'contact' | 'favorites'
 
 interface HomeProps {
   onNavigate: (page: PageType) => void
@@ -8,6 +10,7 @@ interface HomeProps {
 }
 
 function Home({ onNavigate, isEnglish }: HomeProps) {
+  useScrollPosition('home');
   return (
     <div className="home">
       <section className="hero">
@@ -57,7 +60,7 @@ function Home({ onNavigate, isEnglish }: HomeProps) {
               {isEnglish ? 'Interests & Hobbies' : '趣味・興味'}
             </h2>
             <div className="preview-grid">
-              <div className="preview-card" onClick={() => onNavigate('skills')}>
+              <div className="preview-card" onClick={() => onNavigate('hobby')}>
                 <h3>{isEnglish ? 'Hobbies' : '趣味'}</h3>
                 <p>{isEnglish ? 'What I like about games and reading' : 'ゲームと読書のどこが好きか教えるページです'}</p>
               </div>

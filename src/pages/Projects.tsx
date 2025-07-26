@@ -1,10 +1,12 @@
 import './Projects.css'
+import { useScrollPosition } from '../hooks/useScrollPosition';
 
 interface ProjectsProps {
   isEnglish: boolean
 }
 
 function Projects({ isEnglish }: ProjectsProps) {
+  useScrollPosition('projects');
   return (
     <div className="projects-page">
       <div className="projects-container">

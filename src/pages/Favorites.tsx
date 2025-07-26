@@ -1,10 +1,14 @@
 import './Favorites.css'
+import skrdriver from "../images/skrdriver.png";
+import denobelt from "../images/denoubelt.jpg";
+import { useScrollPosition } from '../hooks/useScrollPosition';
 
 interface FavoritesProps {
   isEnglish: boolean
 }
 
 function Favorites({ isEnglish }: FavoritesProps) {
+  useScrollPosition('favorites');
   return (
     <div className="favorites-page">
       <div className="favorites-container">
@@ -31,16 +35,18 @@ function Favorites({ isEnglish }: FavoritesProps) {
             <div className="favorites-items">
               <div className="favorite-item">
                 <h3 className="likes-berts">
-                  <img src="/images/電王ベルト.jpg" alt="電王のベルト" />
+                  <a href="https://p-bandai.jp/item/item-1000226272/?srsltid=AfmBOore-r32MQJACor8TJVv-k0tv77DPQQjF4Hrz8E12ZBjVqw0Mnvz" target="_blank" rel="noopener noreferrer">
+                  <img src={denobelt} />
+                  </a>
                   {isEnglish ? "Den-O's Belt" : "電王のベルト"}
                 </h3>
               </div>
               <div className="favorite-item">
                 <h3 className="likes-berts">
                   <a href="https://p-bandai.jp/item/item-1000231202/?srsltid=AfmBOorFPE73GobquUl21AkVysmxNjxwyzUiLp4HFIgfPT_2-2ktatjw" target="_blank" rel="noopener noreferrer">
-                    <img src="/images/skrdriver.png" alt="スカルのベルト" />
-                    {isEnglish ? "Skull's Belt" : "スカルのベルト"}
+                    <img src={skrdriver} />
                   </a>
+                  {isEnglish ? "Skull's Belt" : "スカルのベルト"}
                 </h3>
               </div>
             </div>
