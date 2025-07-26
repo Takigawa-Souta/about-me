@@ -1,54 +1,54 @@
-# React + TypeScript + Vite
+# Read meの例(Readme.mdの内容も加点要素とします)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# About Me 
 
-Currently, two official plugins are available:
+サイトURL: https://wangchangdog.github.io/about-me/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+(例)
+このサイトは私の自己紹介のために制作しました。
+私は宇宙と地球が好きなので、それをTOPのキービジュアルにしました。
+私は自動車が好きなので、内燃機関の仕組みに関するページを作成しました。
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+# 課題の紹介
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## TOP
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- (ex: TOPページのこだわりポイントは...)
+- (ex:デザインのお手本は~でした。)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 自己紹介のページ
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+- (ex: このページは自己紹介をするページです。)
+- (ex: 画像の収集に苦心しました）
+
+## お問い合わせ
+
+- (ex: お問い合わせページはフォームのスタイルに悩みました)
+
+## その他のページ 1
+
+- (自作のページに関するこだわりポイント)
+- (コンテンツ内容に関することを記入)
+
+## その他のページ 2
+
+- 
+
+# 一番見てほしいところ
+
+- (一番見てほしいポイントを書きましょう)
+
+# 力を入れた点
+
+## 実装面
+
+- (実装に関して、力を入れた点やアピールポイントを書きましょう)
+- (こだわったポイントも書きましょう)
+- (実装で難しかった箇所を書きましょう)
+
+## デザイン面
+
+- (デザイン表現・お手本などなんでもいいので、力を入れた点やアピールポイントを書きましょう)
+- (こだわったポイントも書きましょう)
+- (デザインを形にする上で難しかった箇所を書きましょう)
