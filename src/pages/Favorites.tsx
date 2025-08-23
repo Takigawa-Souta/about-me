@@ -1,5 +1,5 @@
 import './Favorites.css'
-import skrdriver from "../images/skrdriver.png";
+import skrdriver from "../images/skrdriver.png"; //後日差し替え
 import denobelt from "../images/denoubelt.jpg";
 import { useScrollPosition } from '../hooks/useScrollPosition';
 
