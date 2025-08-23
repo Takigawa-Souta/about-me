@@ -1,11 +1,18 @@
+import { useState } from 'react'
 import './Hobby.css'
 import { useScrollPosition } from '../hooks/useScrollPosition';
-// 画像が利用可能になったらインポートを追加
-// import umamusumeImage from "../images/umamusume.jpg";
-// import speedSymbolImage from "../images/speed-symbol.jpg";
-// import fujiKisekiImage from "../images/fuji-kiseki.jpg";
-// import saoImage from "../images/sao.jpg";
-// import tenkuuImage from "../images/tenkuu.jpg";
+import tama from "../images/uma1.png";
+import speed from "../images/uma2.png";
+import fuji from "../images/uma3.png";
+import stay from "../images/uma4.png";
+import orufe from "../images/uma5.png";
+import dream from "../images/uma6.png";
+import gold from "../images/uma7.png";
+import meno from "../images/uma8.png";
+import nakayama from "../images/uma9.png";
+import tachyon from "../images/uma10.png";
+import ameku_book_good from "../images/book2.png";
+import ameku_book from "../images/book1.png";
 
 interface HobbyProps {
   isEnglish: boolean
@@ -13,6 +20,34 @@ interface HobbyProps {
 
 function Hobby({ isEnglish }: HobbyProps) {
   useScrollPosition('hobby');
+  const [currentSlide, setCurrentSlide] = useState(0);
+  
+  // ウマ娘の画像データ
+  const umamusumeImages = [
+    { src: tama, alt: isEnglish ? "Tamamo Cross" : "タマモクロス" },
+    { src: speed, alt: isEnglish ? "Speed Symbol" : "スピードシンボル" },
+    { src: fuji, alt: isEnglish ? "Fuji Kiseki" : "フジキセキ" },
+    { src: stay, alt: isEnglish ? "Stay Gold" : "ステイゴールド" },
+    { src: orufe, alt: isEnglish ? "Orfevre" : "オルフェーヴル" },
+    { src: dream, alt: isEnglish ? "Dream Journey" : "ドリームジャーニー" },
+    { src: gold, alt: isEnglish ? "Gold Ship" : "ゴールドシップ" },
+    { src: meno, alt: isEnglish ? "Phenomenon" : "フェノーメノ" },
+    { src: nakayama, alt: isEnglish ? "Nakayama Festa" : "ナカヤマフェスタ" },
+    { src: tachyon, alt: isEnglish ? "Agnes Tachyon" : "アグネスタキオン" }
+  ];
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % umamusumeImages.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + umamusumeImages.length) % umamusumeImages.length);
+  };
+
+  const goToSlide = (index: number) => {
+    setCurrentSlide(index);
+  };
+
   return (
     <div className="hobby-page">
       <div className="hobby-container">
@@ -45,26 +80,18 @@ function Hobby({ isEnglish }: HobbyProps) {
                 <div className="hobby-card">
                   <div className="hobby-card-image">
                     <img 
-                      src="https://via.placeholder.com/300x200?text=Uma+Musume" 
-                      alt={isEnglish ? "Uma Musume Game" : "ウマ娘ゲーム"}
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.style.backgroundColor = '#f0f0f0';
-                        target.style.display = 'flex';
-                        target.style.alignItems = 'center';
-                        target.style.justifyContent = 'center';
-                        target.alt = isEnglish ? "Uma Musume (Image not available)" : "ウマ娘（画像なし）";
-                      }}
+                      src={tama} 
+                      alt={isEnglish ? "Tamamo Cross" : "タマモクロス"}
                     />
                   </div>
                   <div className="hobby-card-content">
                     <h3 className="hobby-card-title">
-                      {isEnglish ? "Uma Musume Pretty Derby" : "ウマ娘プリティーダービー"}
+                      {isEnglish ? "Tamamo Cross" : "タマモクロス"}
                     </h3>
                     <p className="hobby-card-description">
                       {isEnglish 
-                        ? "A mobile game where you train horse girls to compete in races. Each character has unique personalities and storylines."
-                        : "ウマ娘を育成してレースで勝利を目指すモバイルゲーム。キャラクターそれぞれに個性豊かな性格とストーリーがあります。"
+                        ? "She is a poor girl who speaks Kansai dialect and has many interactions with Oguri Cap, making her a distinctive character. Her nickname is 『 White Lightning 』."
+                        : "関西弁の貧乏気質な女の子でオグリキャップとの絡みも多く特徴的なキャラクターです。二つ名は『白い稲妻』です。"
                       }
                     </p>
                   </div>
@@ -73,16 +100,8 @@ function Hobby({ isEnglish }: HobbyProps) {
                 <div className="hobby-card">
                   <div className="hobby-card-image">
                     <img 
-                      src="https://via.placeholder.com/300x200?text=Speed+Symbol" 
+                      src={speed}
                       alt={isEnglish ? "Speed Symbol Character" : "スピードシンボルキャラクター"}
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.style.backgroundColor = '#f0f0f0';
-                        target.style.display = 'flex';
-                        target.style.alignItems = 'center';
-                        target.style.justifyContent = 'center';
-                        target.alt = isEnglish ? "Speed Symbol (Image not available)" : "スピードシンボル（画像なし）";
-                      }}
                     />
                   </div>
                   <div className="hobby-card-content">
@@ -91,8 +110,8 @@ function Hobby({ isEnglish }: HobbyProps) {
                     </h3>
                     <p className="hobby-card-description">
                       {isEnglish 
-                        ? "A tsundere character who speaks like a boy only with close friends. Despite being small in appetite, she acts tough and strong."
-                        : "仲の良い人にだけ俺っ子になるツンデレキャラ。少食だけど強がりで、とても魅力的なキャラクターです。"
+                        ? "He's a person who only shows his weak side and acts selfishly towards close friends. He's a small eater and a light drinker, but he has a very strong core inside, making him a very charming character."
+                        : "仲の良い人にだけ俺っ子になったり弱いところを見せる人。少食で酒弱だけど心の中にある芯はとっても強くて、とても魅力的なキャラクターです。"
                       }
                     </p>
                   </div>
@@ -101,16 +120,8 @@ function Hobby({ isEnglish }: HobbyProps) {
                 <div className="hobby-card">
                   <div className="hobby-card-image">
                     <img 
-                      src="https://via.placeholder.com/300x200?text=Fuji+Kiseki" 
+                      src={fuji}
                       alt={isEnglish ? "Fuji Kiseki Character" : "フジキセキキャラクター"}
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.style.backgroundColor = '#f0f0f0';
-                        target.style.display = 'flex';
-                        target.style.alignItems = 'center';
-                        target.style.justifyContent = 'center';
-                        target.alt = isEnglish ? "Fuji Kiseki (Image not available)" : "フジキセキ（画像なし）";
-                      }}
                     />
                   </div>
                   <div className="hobby-card-content">
@@ -125,6 +136,48 @@ function Hobby({ isEnglish }: HobbyProps) {
                     </p>
                   </div>
                 </div>
+              </div>
+            </div>
+            
+            {/* ウマ娘画像スライダー */}
+            <div className="umamusume-slider">
+              <h3 className="slider-title">
+                {isEnglish ? "Uma Musume Gallery" : "ウマ娘ギャラリー"}
+              </h3>
+              
+              <div className="slider-container">
+                <button className="slider-btn prev" onClick={prevSlide} aria-label="Previous image">
+                  &#8249;
+                </button>
+                
+                <div className="slider-wrapper">
+                  <div 
+                    className="slider-track" 
+                    style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+                  >
+                    {umamusumeImages.map((image, index) => (
+                      <div key={index} className="slide">
+                        <img src={image.src} alt={image.alt} />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                
+                <button className="slider-btn next" onClick={nextSlide} aria-label="Next image">
+                  &#8250;
+                </button>
+              </div>
+              
+              {/* スライダーインジケーター */}
+              <div className="slider-indicators">
+                {umamusumeImages.map((_, index) => (
+                  <button
+                    key={index}
+                    className={`indicator ${index === currentSlide ? 'active' : ''}`}
+                    onClick={() => goToSlide(index)}
+                    aria-label={`Go to slide ${index + 1}`}
+                  />
+                ))}
               </div>
             </div>
           </div>
@@ -148,26 +201,18 @@ function Hobby({ isEnglish }: HobbyProps) {
                 <div className="hobby-card">
                   <div className="hobby-card-image">
                     <img 
-                      src="https://via.placeholder.com/300x200?text=Sword+Art+Online" 
-                      alt={isEnglish ? "Sword Art Online Light Novel" : "ソードアートオンライン小説"}
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.style.backgroundColor = '#f0f0f0';
-                        target.style.display = 'flex';
-                        target.style.alignItems = 'center';
-                        target.style.justifyContent = 'center';
-                        target.alt = isEnglish ? "SAO (Image not available)" : "SAO（画像なし）";
-                      }}
+                      src={ameku_book_good} 
+                      alt={isEnglish ? "Recommended books from Takao Amakura's Mystery Chart series" : "天久鷹央の推理カルテシリーズのおすすめ本"}
                     />
                   </div>
                   <div className="hobby-card-content">
                     <h3 className="hobby-card-title">
-                      {isEnglish ? "Sword Art Online (SAO)" : "ソードアートオンライン（SAO）"}
+                      {isEnglish ? "Recommended books from Takao Amakura's Mystery Chart series" : "天久鷹央の推理カルテシリーズのおすすめ本"}
                     </h3>
                     <p className="hobby-card-description">
                       {isEnglish 
-                        ? "A science fiction light novel series where a fun game suddenly becomes deadly serious, revealing people's true nature and featuring psychological warfare with murder guilds."
-                        : "楽しいゲームが一気に殺伐としたものになり、人の本性が出たり殺人ギルドとの駆け引きが面白いSF小説シリーズです。"
+                        ? "This work depicts the meeting between Amakura Takao and Takanashi Yu, and shows how Takao gradually opens up his heart from when he was still reluctant to do so."
+                        : "天久鷹央と小鳥遊優の二人の出会いが描かれておりまだ鷹央が心を開いていないところから開いていく様子などが描かれている作品です。"
                       }
                     </p>
                   </div>
@@ -176,16 +221,8 @@ function Hobby({ isEnglish }: HobbyProps) {
                 <div className="hobby-card">
                   <div className="hobby-card-image">
                     <img 
-                      src="https://via.placeholder.com/300x200?text=Tenkuu+Takao" 
+                      src={ameku_book} 
                       alt={isEnglish ? "Tenkyu Takao Medical Mystery" : "天久鷹央医療ミステリー"}
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.style.backgroundColor = '#f0f0f0';
-                        target.style.display = 'flex';
-                        target.style.alignItems = 'center';
-                        target.style.justifyContent = 'center';
-                        target.alt = isEnglish ? "Tenkyu Takao (Image not available)" : "天久鷹央（画像なし）";
-                      }}
                     />
                   </div>
                   <div className="hobby-card-content">

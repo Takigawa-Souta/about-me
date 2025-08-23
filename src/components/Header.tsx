@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import './Header.css'
-import Logo from '../images/Logo.png';
 
 type PageType = 'home' | 'about' | 'hobby' | 'projects' | 'contact' | 'favorites'
 
@@ -34,7 +33,6 @@ function Header({ currentPage, onNavigate, isDarkMode, onToggleDarkMode, isEngli
         >
           <span>{isEnglish ? 'Portfolio Site' : '自己紹介サイト'}</span>
         </button>
-        <img src={Logo}></img>
 
         {/* ハンバーガーメニューボタン */}
         <button 
