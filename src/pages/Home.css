@@ -164,7 +164,7 @@
 @keyframes slideInFromLeft {
   from {
     opacity: 0;
-    transform: translateX(-30px);
+    transform: translateX(-20px);
   }
   to {
     opacity: 1;
@@ -211,12 +211,11 @@
   border-radius: 10px;
   border: 1px solid rgba(49, 130, 206, 0.2);
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
   position: relative;
   overflow: hidden;
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 1;
+  transform: translateY(0);
   will-change: transform, box-shadow;
 }
 
@@ -270,10 +269,10 @@
 }
 
 .preview-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-2px);
   box-shadow: 
-    0 10px 25px rgba(49, 130, 206, 0.2),
-    0 3px 10px rgba(0, 0, 0, 0.08);
+    0 6px 16px rgba(49, 130, 206, 0.12),
+    0 2px 6px rgba(0, 0, 0, 0.05);
   border-color: #3182ce;
   background: rgba(255, 255, 255, 0.95);
 }
@@ -290,27 +289,19 @@
 .preview-card h3 {
   color: #2c5aa0;
   margin-bottom: 0.5rem;
-  transform: translateX(-10px);
-  opacity: 0;
-  animation: slideInFromLeft 0.6s ease-out 0.2s forwards;
-  transition: all 0.3s ease;
+  transition: color 0.2s ease;
 }
 
 .preview-card p {
-  opacity: 0;
   color: #1a365d;
-  transform: translateX(-10px);
-  animation: slideInFromLeft 0.6s ease-out 0.4s forwards;
-  transition: all 0.3s ease;
+  transition: color 0.2s ease;
 }
 
 .preview-card:hover h3 {
-  transform: translateX(5px);
   color: #1e4a7a;
 }
 
 .preview-card:hover p {
-  transform: translateX(5px);
   color: #2d3748;
 }
 
@@ -357,6 +348,185 @@
 .btn-contact:hover {
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(49, 130, 206, 0.4);
+}
+
+/* ポートフォリオスライダーセクション */
+.portfolio-slider-section {
+  padding: 3rem 0;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 15px;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(49, 130, 206, 0.2);
+  position: relative;
+}
+
+.portfolio-slider {
+  max-width: 800px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(49, 130, 206, 0.1);
+  border: 1px solid rgba(49, 130, 206, 0.1);
+}
+
+.portfolio-slider .slider-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.portfolio-slider .slider-wrapper {
+  flex: 1;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #f8f9fa;
+}
+
+.portfolio-slider .slider-track {
+  display: flex;
+  transition: transform 0.3s ease;
+  width: 100%;
+}
+
+.portfolio-slider .slide {
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background: #f8f9fa;
+}
+
+.portfolio-slider .slide img {
+  max-width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-slider .slider-btn {
+  background: linear-gradient(135deg, #3182ce, #2c5aa0);
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(49, 130, 206, 0.3);
+}
+
+.portfolio-slider .slider-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(49, 130, 206, 0.4);
+}
+
+.portfolio-slider .slider-btn:active {
+  transform: translateY(0);
+}
+
+.portfolio-slider .slider-indicators {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+  margin-bottom: 2rem;
+  padding: 0.5rem;
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+
+.portfolio-slider .indicator {
+  min-width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  border: 1px solid #d1d5db;
+  background: rgba(255, 255, 255, 0.9);
+  color: #6b7280;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portfolio-slider .indicator.active {
+  background: #3182ce;
+  color: white;
+  border-color: #3182ce;
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(49, 130, 206, 0.4);
+}
+
+.portfolio-slider .indicator:hover {
+  background: #f3f4f6;
+  border-color: #9ca3af;
+  transform: scale(1.05);
+}
+
+/* インジケーターのモバイル対応 */
+.portfolio-slider .slider-indicators {
+  gap: 0.2rem;
+  padding: 0.3rem;
+  margin-bottom: 1.5rem;
+}
+
+.portfolio-slider .indicator {
+  width: 6px;
+  height: 6px;
+}
+
+.portfolio-slider .indicator.active {
+  transform: scale(1.5);
+}
+
+/* 極小画面でのインジケーター調整 */
+.portfolio-slider .slider-indicators {
+  gap: 0.15rem;
+  padding: 0.2rem;
+  max-height: 60px;
+  overflow-y: auto;
+}
+
+.portfolio-slider .indicator {
+  width: 5px;
+  height: 5px;
+}
+
+/* スライドの説明テキスト */
+.slide-description {
+  text-align: center;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  border: 1px solid rgba(49, 130, 206, 0.1);
+}
+
+.slide-title {
+  font-size: 1.5rem;
+  color: #2c5aa0;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.slide-text {
+  color: #1a365d;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 /* ダークモード */
@@ -418,8 +588,8 @@
   background: rgba(255, 255, 255, 0.12);
   border-color: #66c86e;
   box-shadow: 
-    0 15px 35px rgba(102, 200, 110, 0.3),
-    0 5px 15px rgba(0, 0, 0, 0.2);
+    0 12px 30px rgba(102, 200, 110, 0.25),
+    0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .dark-mode .preview-card h3 {
@@ -445,6 +615,56 @@
 
 .dark-mode .btn:hover {
   background: linear-gradient(135deg, #a8e6a1, #66c86e);
+}
+
+/* ダークモード - ポートフォリオスライダー */
+.dark-mode .portfolio-slider-section {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(102, 200, 110, 0.2);
+}
+
+.dark-mode .portfolio-slider {
+  background: rgba(255, 255, 255, 0.08);
+  color: #a8e6a1;
+}
+
+.dark-mode .slide-description {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(102, 200, 110, 0.2);
+}
+
+.dark-mode .slide-title {
+  color: #66c86e;
+}
+
+.dark-mode .slide-text {
+  color: #7dd87f;
+}
+
+.dark-mode .portfolio-slider .slide {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.dark-mode .portfolio-slider .slider-wrapper {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.dark-mode .portfolio-slider .indicator {
+  background: rgba(255, 255, 255, 0.1);
+  color: #d1d5db;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.dark-mode .portfolio-slider .indicator.active {
+  background: #66c86e;
+  color: #1a1a2e;
+  border-color: #66c86e;
+  box-shadow: 0 2px 8px rgba(102, 200, 110, 0.4);
+}
+
+.dark-mode .portfolio-slider .indicator:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
 @media (max-width: 768px) {
@@ -480,9 +700,72 @@
     padding: 1.2rem;
   }
 
+  /* ポートフォリオスライダーのモバイル対応 */
+  .portfolio-slider-section {
+    padding: 2rem 0;
+    margin-bottom: 1.5rem;
+  }
+  
+  .portfolio-slider {
+    padding: 1.5rem;
+  }
+  
+  .portfolio-slider .slider-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+  
+  .portfolio-slider .slide img {
+    max-height: 300px;
+  }
+  
+  .slide-description {
+    padding: 1rem;
+  }
+  
+  .slide-title {
+    font-size: 1.3rem;
+  }
+  
+  .slide-text {
+    font-size: 0.9rem;
+  }
+
+  /* インジケーターのモバイル対応 */
+  .portfolio-slider .slider-indicators {
+    gap: 0.15rem;
+    padding: 0.3rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .portfolio-slider .indicator {
+    min-width: 20px;
+    height: 20px;
+    font-size: 0.7rem;
+  }
+  
+  .portfolio-slider .indicator.active {
+    transform: scale(1.08);
+  }
+
+  /* 極小画面でのインジケーター調整 */
+  .portfolio-slider .slider-indicators {
+    gap: 0.1rem;
+    padding: 0.2rem;
+    max-height: 80px;
+    overflow-y: auto;
+  }
+  
+  .portfolio-slider .indicator {
+    min-width: 18px;
+    height: 18px;
+    font-size: 0.65rem;
+  }
+
   /* モバイルでのアニメーション調整 */
   .preview-card:hover {
-    transform: translateY(-3px) scale(1.01);
+    transform: translateY(-2px) scale(1.005);
     animation: none; /* フロートアニメーションを無効 */
   }
 
@@ -491,6 +774,34 @@
   .preview-section,
   .section-title {
     animation-duration: 0.4s;
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio-slider .slider-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .portfolio-slider .slider-btn {
+    position: static;
+    margin: 0;
+  }
+  
+  .portfolio-slider .slider-btn.prev {
+    order: 1;
+  }
+  
+  .portfolio-slider .slider-wrapper {
+    order: 2;
+  }
+  
+  .portfolio-slider .slider-btn.next {
+    order: 3;
+  }
+  
+  .portfolio-slider .slide img {
+    max-height: 250px;
   }
 }
 

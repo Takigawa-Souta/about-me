@@ -1,6 +1,6 @@
 import './Favorites.css'
-import skrdriver from "../images/skrdriver.png"; //後日差し替え
-import denobelt from "../images/denoubelt.jpg";
+import skrdriver from "../images/skr.jpg";
+import gnssdriver from "../images/gnss.jpg";
 import { useScrollPosition } from '../hooks/useScrollPosition';
 
 interface FavoritesProps {
@@ -28,17 +28,17 @@ function Favorites({ isEnglish }: FavoritesProps) {
             </h2>
             <p className="likes-contact">
               {isEnglish 
-                ? 'I will introduce two of my favorite Kamen Riders. The first is Kamen Rider Den-O. Kamen Rider Den-O is a rider themed around time and trains, and I really like the interactions with the Imagin who are supposed to be enemies but cooperate with the protagonist, and the many developments that were not seen in previous riders, such as the intermediate form being stronger than the strongest form. Den-O has adult belts and weapons available, and I think they have great in-show reproduction with infrared communication and takeover mode! The second is Kamen Rider Skull, one of the riders from Kamen Rider W. Kamen Rider Skull embodies the very essence of a hard-boiled man, partly due to the great style of actor Koji Kikkawa. Skull also has an adult belt available, with matte black coloring and proper reproduction of the in-show BGM, so personally it\'s one of my top 1 or 2 favorite belts.'
-                : '私の好きな仮面ライダーを二人紹介します。一人目は仮面ライダー電王です。\n仮面ライダー電王は時と電車をモチーフにしたライダーで主人公に協力する敵であるはずのイマジン達との絡みや最強フォームよりも中間フォームの方が強かったりと今迄のライダーにはなかった展開も多くとても好きです。電王は大人用のベルトと武器が出ており赤外線通信があったり乗っ取りモードがあったりなど劇中再現性がとてもあるなと思っています！\n二人目は仮面ライダーダブルに出てくるライダーの一人である仮面ライダースカルです\n仮面ライダースカルは演者さんである吉川晃司さんのスタイルの良さもありハードボイルドな男そのものになっています。スカルも大人用のベルトが出ており黒色の表現もマットなものになっていたり劇中BGMもしっかり再現されていたりしているので個人的には1、2を争うくらい好きなベルトです'
+                ? 'Let me introduce two of my favorite Kamen Riders. The first is Kamen Rider Zangetsu. Kamen Rider Zangetsu is the fourth Rider in the Kamen Rider Gaim series, themed around the Sengoku period and fruit. Even when opposing the protagonist, he\'s incredibly strong and rarely loses unless caught off guard. The Genesis Driver he uses has less motor noise than the DX version and more LEDs, making it highly faithful to the show. Plus, there are so many items available, offering tons of ways to play! The second is Kamen Rider Skull, one of the Riders appearing in Kamen Rider Double. Kamen Rider Skull embodies the very essence of a hard-boiled man, partly thanks to the excellent physique of his actor, Koji Yoshikawa. Skull also has an adult-sized belt available. Its black finish is matte, and the in-show BGM is faithfully reproduced. Personally, it\'s one of my absolute favorite belts, easily ranking among my top two.'
+                : '私の好きな仮面ライダーを二人紹介します。一人目は仮面ライダー斬月です。\n仮面ライダー斬月は戦国とフルーツをモチーフにした仮面ライダー鎧武のシリーズの四号ライダーで主人公と敵対する時でもかなり強く不意打ち以外ではほぼ負けていない人です。彼が使うゲネシスドライバーはDX版の頃よりもモーター音が減っていてLEDが増えてかなり劇中再現性があります。またアイテムも多く出ていて遊び方がとてもあるなと思っています！\n二人目は仮面ライダーダブルに出てくるライダーの一人である仮面ライダースカルです\n仮面ライダースカルは演者さんである吉川晃司さんのスタイルの良さもありハードボイルドな男そのものになっています。スカルも大人用のベルトが出ており黒色の表現もマットなものになっていたり劇中BGMもしっかり再現されていたりしているので個人的には1、2を争うくらい好きなベルトです'
               }
             </p>
             <div className="favorites-items">
               <div className="favorite-item">
                 <h3 className="likes-berts">
-                  <a href="https://p-bandai.jp/item/item-1000226272/?srsltid=AfmBOore-r32MQJACor8TJVv-k0tv77DPQQjF4Hrz8E12ZBjVqw0Mnvz" target="_blank" rel="noopener noreferrer">
-                  <img src={denobelt} />
+                  <a href="https://p-bandai.jp/item/item-1000199328/" target="_blank" rel="noopener noreferrer">
+                  <img src={gnssdriver} />
                   </a>
-                  {isEnglish ? "Den-O's Belt" : "電王のベルト"}
+                  {isEnglish ? "Genesis Driver" : "ゲネシスドライバー"}
                 </h3>
               </div>
               <div className="favorite-item">

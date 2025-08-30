@@ -42,6 +42,17 @@ function About({ isEnglish }: AboutProps) {
             </p>
           </div>
         </div>
+        
+        {/* 画像セクション */}
+        <div className="about-image-section">
+          <div className="image-container">
+            {/* TODO: 画像パスを設定してください */}
+            {/* <img src={yourImagePath} alt={isEnglish ? "About me image" : "私についての画像"} className="about-image" /> */}
+            <div className="image-placeholder">
+              <p>{isEnglish ? "Image will be displayed here" : "ここに画像が表示されます"}</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   )
