@@ -7,7 +7,7 @@
 .hobby-container {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 2rem;
 }
 
 .hobby-header {
@@ -41,7 +41,7 @@
 
 .hobby-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 2rem;
 }
 
@@ -117,14 +117,14 @@
 /* カードグリッドのスタイル */
 .hobby-cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
   margin-top: 2rem;
 }
 
 /* 本セクション用に特別にカードサイズを調整 */
 .hobby-category:last-of-type .hobby-cards-grid {
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 }
 
 .hobby-category:last-of-type .hobby-card-image {
@@ -133,7 +133,7 @@
 
 /* ゲームセクション用の3カラムレイアウト */
 .hobby-category:first-of-type .hobby-cards-grid {
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 /* ゲーム（ウマ娘）のカード画像高さ調整 */
@@ -233,7 +233,7 @@
   }
   
   .hobby-container {
-    padding: 0 0.5rem;
+    padding: 0 1rem;
   }
   
   .hobby-header {
@@ -338,7 +338,7 @@
   }
   
   .hobby-container {
-    padding: 0 0.25rem;
+    padding: 0 0.5rem;
   }
   
   .hobby-header {
@@ -386,7 +386,7 @@
   }
   
   .hobby-card-content {
-    padding: 0.75rem;
+    padding: 1rem;
   }
   
   .hobby-card-title {
@@ -423,7 +423,7 @@
   }
   
   .hobby-category {
-    padding: 0.5rem;
+    padding: 0.75rem;
   }
   
   .hobby-category h2 {
