@@ -38,7 +38,8 @@
 
 .current-studies h2,
 .future-goals h2,
-.certifications h2 {
+.certifications h2,
+.ai-study-section h2 {
   color: #3182ce;
   font-size: 2rem;
   margin-bottom: 2rem;
@@ -68,40 +69,40 @@
   box-shadow: 0 10px 25px rgba(49, 130, 206, 0.2);
 }
 
+/* プロジェクトカード画像スタイル */
+.project-card-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.project-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  background-color: #f8f9fa;
+}
+
+.project-card:hover .project-card-image img {
+  transform: scale(1.05);
+}
+
 .project-content {
   padding: 2rem;
 }
 
-.project-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
+.project-card-content {
+  padding: 1.5rem;
 }
 
-.project-header h3 {
-  color: #2c5aa0;
-  font-size: 1.5rem;
-  margin: 0;
+.project-card-title {
+  font-size: 1.2rem;
   font-weight: 600;
-}
-
-.status-badge {
-  padding: 0.3rem 0.8rem;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  text-transform: uppercase;
-}
-
-.status-badge.studying {
-  background: linear-gradient(135deg, #3182ce, #2c5aa0);
-  color: white;
-}
-
-.status-badge.planned {
-  background: #e6f3ff;
   color: #2c5aa0;
+  margin: 0 0 1rem 0;
+  line-height: 1.3;
 }
 
 .project-content p {
@@ -111,47 +112,11 @@
   font-size: 1rem;
 }
 
-.project-technologies {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.tech-tag {
-  background: #f0f4ff;
-  color: #667eea;
-  padding: 0.3rem 0.8rem;
-  border-radius: 15px;
-  font-size: 0.8rem;
-  font-weight: 500;
-  border: 1px solid #e6f0ff;
-}
-
-.progress-section {
-  margin-top: 1rem;
-}
-
-.progress-label {
-  color: #333;
-  font-size: 0.9rem;
-  margin-bottom: 0.5rem;
-  font-weight: 500;
-}
-
-.progress-bar {
-  width: 100%;
-  height: 8px;
-  background: #e9ecef;
-  border-radius: 4px;
-  overflow: hidden;
-}
-
-.progress-fill {
-  height: 100%;
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  border-radius: 4px;
-  transition: width 0.3s ease;
+.project-card-description {
+  color: #1a365d;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
 }
 
 /* ダークモード */
@@ -170,7 +135,8 @@
 
 .dark-mode .current-studies h2,
 .dark-mode .future-goals h2, 
-.dark-mode .certifications h2 {
+.dark-mode .certifications h2,
+.dark-mode .ai-study-section h2 {
   color: #66c86e;
   border-bottom-color: #66c86e;
 }
@@ -180,31 +146,23 @@
   color: #a8e6a1;
 }
 
-.dark-mode .project-header h3 {
-  color: #a8e6a1;
-}
-
 .dark-mode .project-content p,
 .dark-mode .study-content {
   color: #7dd87f;
 }
 
-.dark-mode .tech-tag {
-  background: rgba(102, 200, 110, 0.2);
-  color: #66c86e;
-  border-color: rgba(102, 200, 110, 0.3);
-}
+/* ダークモード - カード共通スタイル */
 
-.dark-mode .progress-label {
+.dark-mode .project-card-title {
   color: #a8e6a1;
 }
 
-.dark-mode .progress-bar {
-  background: rgba(255, 255, 255, 0.1);
+.dark-mode .project-card-description {
+  color: #7dd87f;
 }
 
-.dark-mode .progress-fill {
-  background: linear-gradient(135deg, #66c86e, #a8e6a1);
+.dark-mode .project-card-image img {
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
 @media (max-width: 768px) {
@@ -225,10 +183,21 @@
     padding: 1.5rem;
   }
   
-  .project-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
+  /* プロジェクトカード画像レスポンシブ */
+  .project-card-image {
+    height: 180px;
+  }
+  
+  .project-card-content {
+    padding: 1.2rem;
+  }
+  
+  .project-card-title {
+    font-size: 1.1rem;
+  }
+  
+  .project-card-description {
+    font-size: 0.9rem;
   }
 }
 
@@ -247,5 +216,22 @@
   
   .project-content {
     padding: 1rem;
+  }
+  
+  /* プロジェクトカード480px以下 */
+  .project-card-image {
+    height: 160px;
+  }
+  
+  .project-card-content {
+    padding: 1rem;
+  }
+  
+  .project-card-title {
+    font-size: 1rem;
+  }
+  
+  .project-card-description {
+    font-size: 0.85rem;
   }
 }

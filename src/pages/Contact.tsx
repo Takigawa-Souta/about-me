@@ -1,14 +1,11 @@
 import { useState } from 'react'
 import './Contact.css'
 import { useScrollPosition } from '../hooks/useScrollPosition';
+import type { BasePageProps, ContactFormData } from '../types';
 
-interface ContactProps {
-  isEnglish: boolean
-}
-
-function Contact({ isEnglish }: ContactProps) {
+function Contact({ isEnglish }: BasePageProps) {
   useScrollPosition('contact');
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<ContactFormData>({
     name: '',
     email: '',
     subject: '',

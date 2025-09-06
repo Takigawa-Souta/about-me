@@ -2,41 +2,37 @@
 import { useState } from 'react'
 import { useScrollPosition } from '../hooks/useScrollPosition';
 import './Home.css';
-import dzia from "../images/dzia.jpg";
-import rizb from "../images/rizb.jpg";
-import rizb2 from "../images/rizb2.jpg";
-import zron from "../images/zron.jpg";
-import gzron from "../images/gzron.jpg";
-import zku from "../images/zku.jpg";
-import oum from "../images/oum.jpg";
-import sun from "../images/sun.jpg";
-import moon from "../images/moon.jpg";
-import sngk from "../images/sngk.jpg";
-import gnssdriver from "../images/gnss.jpg";
-import oz from "../images/oz.jpg";
-import kbt_bath from "../images/kbt&bath.jpg";
-import dbr from "../images/dbr.jpg";
-import x_f from "../images/x&f.jpg";
-import skr from "../images/skr.jpg";
-import ac from "../images/ac.jpg";
-import denoue from "../images/denoue.jpg";
-import zrns from "../images/zrns.jpg";
-import mpd from "../images/mpd.jpg";
-import diend from "../images/diend.jpg";
-import breid from "../images/breid.jpg";
-import garren from "../images/garren.jpg";
-import krs from "../images/krs.jpg";
-import krsar from "../images/krsar.jpg";
-import faizedge from "../images/faizedge.jpg";
+import { 
+  dzia, 
+  rizb, 
+  rizb2, 
+  zron, 
+  gzron, 
+  zku, 
+  oum, 
+  sun, 
+  moon, 
+  sngk, 
+  gnssdriver, 
+  oz, 
+  kbt_bath, 
+  dbr, 
+  x_f, 
+  skrdriver as skr, 
+  ac, 
+  denoue, 
+  zrns, 
+  mpd, 
+  diend,
+  breid,
+  garren,
+  krs,
+  krsar,
+  faizedge
+} from "../assets/images";
+import type { NavigatablePageProps } from '../types';
 
-type PageType = 'home' | 'about' | 'hobby' | 'projects' | 'contact' | 'favorites'
-
-interface HomeProps {
-  onNavigate: (page: PageType) => void
-  isEnglish: boolean
-}
-
-function Home({ onNavigate, isEnglish }: HomeProps) {
+function Home({ onNavigate, isEnglish }: NavigatablePageProps) {
   useScrollPosition('home');
   
   const [currentSlide, setCurrentSlide] = useState(0);

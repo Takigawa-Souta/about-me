@@ -1,13 +1,9 @@
 import './Favorites.css'
-import skrdriver from "../images/skr.jpg";
-import gnssdriver from "../images/gnss.jpg";
+import { skrdriver, gnssdriver } from "../assets/images";
 import { useScrollPosition } from '../hooks/useScrollPosition';
+import type { BasePageProps } from '../types';
 
-interface FavoritesProps {
-  isEnglish: boolean
-}
-
-function Favorites({ isEnglish }: FavoritesProps) {
+function Favorites({ isEnglish }: BasePageProps) {
   useScrollPosition('favorites');
   return (
     <div className="favorites-page">

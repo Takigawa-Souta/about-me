@@ -99,6 +99,29 @@
   padding: 2rem;
   border-radius: 15px;
   box-shadow: 0 5px 15px rgba(49, 130, 206, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-form::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('../images/contact.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.28;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.contact-form > * {
+  position: relative;
+  z-index: 2;
 }
 
 .contact-form h2 {
@@ -230,6 +253,10 @@
 .dark-mode .contact-form {
   background: rgba(255, 255, 255, 0.08);
   color: #a8e6a1;
+}
+
+.dark-mode .contact-form::before {
+  opacity: 0.25;
 }
 
 .dark-mode .contact-info h2,

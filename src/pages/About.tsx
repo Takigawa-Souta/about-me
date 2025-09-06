@@ -1,11 +1,9 @@
-import '../pages/About2.css';
+import '../pages/About.css';
 import { useScrollPosition } from '../hooks/useScrollPosition';
+import type { BasePageProps } from '../types';
+import { mbti } from "../assets/images";
 
-interface AboutProps {
-  isEnglish: boolean
-}
-
-function About({ isEnglish }: AboutProps) {
+function About({ isEnglish }: BasePageProps) {
   useScrollPosition('about');
   return (
     <div className="about-page">
@@ -43,13 +41,24 @@ function About({ isEnglish }: AboutProps) {
           </div>
         </div>
         
-        {/* 画像セクション */}
         <div className="about-image-section">
-          <div className="image-container">
-            {/* TODO: 画像パスを設定してください */}
-            {/* <img src={yourImagePath} alt={isEnglish ? "About me image" : "私についての画像"} className="about-image" /> */}
-            <div className="image-placeholder">
-              <p>{isEnglish ? "Image will be displayed here" : "ここに画像が表示されます"}</p>
+          <div className="about-card">
+            <div className="about-card-image">
+              <img 
+                src={mbti}
+                alt={isEnglish ? "MBTI INTJ Architect personality type" : "MBTI INTJ 建築者タイプ"}
+              />
+            </div>
+            <div className="about-card-content">
+              <h3 className="about-card-title">
+                {isEnglish ? "INTJ - The Architect" : "INTJ - 建築者"}
+              </h3>
+              <p className="about-card-description">
+                {isEnglish 
+                  ? "A strategic and independent personality type. Known for their analytical thinking and ability to see the big picture while focusing on long-term goals."
+                  : "戦略的で独立性の高い性格タイプ。分析的思考と長期的な目標に焦点を当てながら全体像を把握する能力で知られています。"
+                }
+              </p>
             </div>
           </div>
         </div>

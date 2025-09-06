@@ -1,29 +1,28 @@
 import { useState } from 'react'
 import './Hobby.css'
 import { useScrollPosition } from '../hooks/useScrollPosition';
-import tama from "../images/uma1.png";
-import speed from "../images/uma2.png";
-import fuji from "../images/uma3.png";
-import stay from "../images/uma4.png";
-import orufe from "../images/uma5.png";
-import dream from "../images/uma6.png";
-import gold from "../images/uma7.png";
-import meno from "../images/uma8.png";
-import nakayama from "../images/uma9.png";
-import tachyon from "../images/uma10.png";
-import ameku_book_good from "../images/book2.png";
-import ameku_book from "../images/book1.png";
+import type { BasePageProps, UmaMusumeImageData } from '../types';
+import { 
+  tama, 
+  speed, 
+  fuji, 
+  stay, 
+  orufe, 
+  dream, 
+  gold, 
+  meno, 
+  nakayama, 
+  tachyon, 
+  ameku_book_good, 
+  ameku_book 
+} from "../assets/images";
 
-interface HobbyProps {
-  isEnglish: boolean
-}
-
-function Hobby({ isEnglish }: HobbyProps) {
+function Hobby({ isEnglish }: BasePageProps) {
   useScrollPosition('hobby');
   const [currentSlide, setCurrentSlide] = useState(0);
   
   // ウマ娘の画像データ
-  const umamusumeImages = [
+  const umamusumeImages: UmaMusumeImageData[] = [
     { src: tama, alt: isEnglish ? "Tamamo Cross" : "タマモクロス" },
     { src: speed, alt: isEnglish ? "Speed Symbol" : "スピードシンボル" },
     { src: fuji, alt: isEnglish ? "Fuji Kiseki" : "フジキセキ" },
