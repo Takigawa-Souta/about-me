@@ -667,14 +667,36 @@
   border-color: rgba(255, 255, 255, 0.4);
 }
 
+/* レスポンシブ対応 */
 @media (max-width: 768px) {
+  .hero {
+    padding: 2rem 0;
+    margin-bottom: 1.5rem;
+  }
+  
   .hero-content h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    line-height: 1.3;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+    line-height: 1.6;
   }
   
   .hero-buttons {
     flex-direction: column;
     align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .btn {
+    padding: 0.7rem 1.3rem;
+    font-size: 0.95rem;
+  }
+  
+  .home-preview {
+    padding: 1.5rem 0;
   }
   
   .preview-grid {
@@ -687,7 +709,7 @@
   }
 
   .section-title {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
 
   .home-preview::before,
@@ -708,12 +730,23 @@
   
   .portfolio-slider {
     padding: 1.5rem;
+    max-width: none;
+    margin: 0 1rem;
+  }
+  
+  .portfolio-slider .slider-container {
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
   }
   
   .portfolio-slider .slider-btn {
     width: 40px;
     height: 40px;
     font-size: 1.2rem;
+  }
+  
+  .portfolio-slider .slide {
+    padding: 0.75rem;
   }
   
   .portfolio-slider .slide img {
@@ -734,7 +767,7 @@
 
   /* インジケーターのモバイル対応 */
   .portfolio-slider .slider-indicators {
-    gap: 0.15rem;
+    gap: 0.2rem;
     padding: 0.3rem;
     margin-bottom: 1.5rem;
   }
@@ -746,21 +779,7 @@
   }
   
   .portfolio-slider .indicator.active {
-    transform: scale(1.08);
-  }
-
-  /* 極小画面でのインジケーター調整 */
-  .portfolio-slider .slider-indicators {
-    gap: 0.1rem;
-    padding: 0.2rem;
-    max-height: 80px;
-    overflow-y: auto;
-  }
-  
-  .portfolio-slider .indicator {
-    min-width: 18px;
-    height: 18px;
-    font-size: 0.65rem;
+    transform: scale(1.1);
   }
 
   /* モバイルでのアニメーション調整 */
@@ -778,14 +797,68 @@
 }
 
 @media (max-width: 480px) {
+  .hero {
+    padding: 1.5rem 0;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-content h1 {
+    font-size: 1.5rem;
+    line-height: 1.2;
+  }
+  
+  .hero-subtitle {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+  
+  .btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+  
+  .home-preview {
+    padding: 1rem 0;
+  }
+  
+  .preview-section {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .section-title {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .preview-card {
+    padding: 1rem;
+  }
+  
+  /* ポートフォリオスライダーの480px対応 */
+  .portfolio-slider-section {
+    padding: 1.5rem 0;
+    margin-bottom: 1rem;
+  }
+  
+  .portfolio-slider {
+    padding: 1rem;
+    margin: 0 0.5rem;
+  }
+  
   .portfolio-slider .slider-container {
     flex-direction: column;
     gap: 1rem;
+    margin-bottom: 1rem;
   }
   
   .portfolio-slider .slider-btn {
     position: static;
     margin: 0;
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
   }
   
   .portfolio-slider .slider-btn.prev {
@@ -800,8 +873,245 @@
     order: 3;
   }
   
+  .portfolio-slider .slide {
+    padding: 0.5rem;
+  }
+  
   .portfolio-slider .slide img {
     max-height: 250px;
+  }
+  
+  .slide-description {
+    padding: 0.75rem;
+  }
+  
+  .slide-title {
+    font-size: 1.1rem;
+  }
+  
+  .slide-text {
+    font-size: 0.85rem;
+  }
+  
+  /* インジケーターの480px対応 */
+  .portfolio-slider .slider-indicators {
+    gap: 0.15rem;
+    padding: 0.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .portfolio-slider .indicator {
+    min-width: 18px;
+    height: 18px;
+    font-size: 0.65rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .hero {
+    padding: 1rem 0;
+    margin-bottom: 0.75rem;
+  }
+  
+  .hero-content h1 {
+    font-size: 1.3rem;
+    padding: 0 0.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 0.9rem;
+    padding: 0 0.5rem;
+  }
+  
+  .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+  
+  .preview-section {
+    padding: 0.75rem;
+  }
+  
+  .section-title {
+    font-size: 1.2rem;
+  }
+  
+  .preview-card {
+    padding: 0.75rem;
+  }
+  
+  /* ポートフォリオスライダーの320px対応 */
+  .portfolio-slider {
+    padding: 0.75rem;
+    margin: 0 0.25rem;
+  }
+  
+  .portfolio-slider .slider-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 0.9rem;
+  }
+  
+  .portfolio-slider .slide img {
+    max-height: 200px;
+  }
+  
+  .slide-description {
+    padding: 0.5rem;
+  }
+  
+  .slide-title {
+    font-size: 1rem;
+  }
+  
+  .slide-text {
+    font-size: 0.8rem;
+  }
+  
+  .portfolio-slider .indicator {
+    min-width: 16px;
+    height: 16px;
+    font-size: 0.6rem;
+  }
+}
+
+/* 大画面用の調整 */
+@media (min-width: 1400px) {
+  .hero {
+    padding: 4rem 0;
+    margin-bottom: 3rem;
+  }
+  
+  .hero-content h1 {
+    font-size: 3.2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.4rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .btn {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+  }
+  
+  .home-preview {
+    padding: 3rem 0;
+  }
+  
+  .preview-section {
+    padding: 4rem;
+    margin-bottom: 3rem;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+  }
+  
+  .preview-card {
+    padding: 2.5rem;
+  }
+  
+  /* ポートフォリオスライダーの大画面対応 */
+  .portfolio-slider-section {
+    padding: 4rem 0;
+    margin-bottom: 3rem;
+  }
+  
+  .portfolio-slider {
+    max-width: 1000px;
+    padding: 3rem;
+  }
+  
+  .portfolio-slider .slider-container {
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .portfolio-slider .slider-btn {
+    width: 60px;
+    height: 60px;
+    font-size: 1.8rem;
+  }
+  
+  .portfolio-slider .slide {
+    padding: 1.5rem;
+  }
+  
+  .portfolio-slider .slide img {
+    max-height: 500px;
+  }
+  
+  .slide-description {
+    padding: 2rem;
+  }
+  
+  .slide-title {
+    font-size: 1.8rem;
+  }
+  
+  .slide-text {
+    font-size: 1.1rem;
+  }
+  
+  .portfolio-slider .indicator {
+    min-width: 28px;
+    height: 28px;
+    font-size: 0.8rem;
+  }
+}
+
+/* 中画面用の調整 */
+@media (min-width: 992px) and (max-width: 1399px) {
+  .hero {
+    padding: 3.5rem 0;
+  }
+  
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.3rem;
+  }
+  
+  .preview-section {
+    padding: 2.5rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .preview-card {
+    padding: 2rem;
+  }
+  
+  /* ポートフォリオスライダーの中画面対応 */
+  .portfolio-slider {
+    max-width: 900px;
+    padding: 2.5rem;
+  }
+  
+  .portfolio-slider .slider-btn {
+    width: 55px;
+    height: 55px;
+    font-size: 1.6rem;
+  }
+  
+  .portfolio-slider .slide img {
+    max-height: 450px;
+  }
+  
+  .slide-title {
+    font-size: 1.6rem;
+  }
+  
+  .slide-text {
+    font-size: 1rem;
   }
 }
 
